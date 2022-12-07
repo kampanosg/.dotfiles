@@ -18,7 +18,16 @@ return require('packer').startup(function(use)
   use 'williamboman/mason.nvim'    
   use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig' 
-  --use 'nvim-treesitter/nvim-treesitter'
+  use {
+    'folke/todo-comments.nvim',
+    requires = 'nvim-lua/plenary.nvim'
+  }
+
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
+
 
   -- Completion framework:
   use 'hrsh7th/nvim-cmp' 
@@ -42,4 +51,5 @@ return require('packer').startup(function(use)
 
   -- Theme
   use 'folke/tokyonight.nvim'
+
 end)
