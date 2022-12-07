@@ -19,3 +19,13 @@ nnoremap('<leader>fc', '<cmd>Commands<CR>')
 -- Trouble
 nnoremap('<leader>xx', '<cmd>TroubleToggle<CR>')
 nnoremap('<leader>xt', '<cmd>TodoTrouble<CR>')
+
+-- Code navigation
+nnoremap('gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+nnoremap('gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+nnoremap('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+nnoremap('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+nnoremap('<leader>==', '<cmd>lua vim.lsp.buf.format()<CR>')
+nnoremap('gc', '<cmd>lua vim.lsp.buf.incoming_calls()<CR>')
+nnoremap('gR', '<cmd>lua vim.lsp.buf.rename()<CR>')
+
