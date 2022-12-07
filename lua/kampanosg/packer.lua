@@ -6,6 +6,7 @@ return require('packer').startup(function(use)
 
   use 'lewis6991/gitsigns.nvim'
   use 'feline-nvim/feline.nvim' -- status bar
+  use 'yamatsum/nvim-cursorline'
 
   use {
     'kyazdani42/nvim-tree.lua',
