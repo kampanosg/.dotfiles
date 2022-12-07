@@ -5,14 +5,16 @@ It can be cloned directly into `~/.config/` and then renamed to `nvim`. [Packer]
 
 Run `:PackerSync` to pull the plugins.
 
-Export the following env variable to get the fuzzy finder to include `dotfiles` but not hidden dirs (e.g `.git/`)
+Export the following env variables to get the fuzzy finder to include `dotfiles` but not hidden dirs (e.g `.git/`)
 
-```
-95  export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print
-
+```bash
+if type rg &> /dev/null; then
+    export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git/'"
+    export FZF_DEFAULT_OPTS="-m --height 50% --border"
+fi
 ```
 
 Other dependencies:
-* `brew install the_silver_searcher`
+* `brew install ripgrep`
 
 ![](https://media.giphy.com/media/5Zesu5VPNGJlm/giphy-downsized.gif)
