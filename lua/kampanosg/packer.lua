@@ -4,16 +4,13 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use 'mhinz/vim-startify'
   use 'lewis6991/gitsigns.nvim'
   use 'feline-nvim/feline.nvim' -- status bar
-  use 'akinsho/toggleterm.nvim'
 
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons'
   } 
-
 
   use 'williamboman/mason.nvim'    
   use 'williamboman/mason-lspconfig.nvim'
@@ -60,6 +57,6 @@ return require('packer').startup(function(use)
   use { 'junegunn/fzf.vim' }
 
   -- Theme
-  use 'folke/tokyonight.nvim'
+  use 'navarasu/onedark.nvim'
 
 end)
