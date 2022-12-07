@@ -10,6 +10,7 @@ nnoremap("<leader>l", "<cmd>NvimTreeFindFile<CR>")
 
 -- FuzzyFinder (fzf)
 nnoremap('<leader>ff', '<cmd>Files<CR>')
+nnoremap('<leader>fa', '<cmd>Ag<CR>')
 nnoremap('<leader>fg', '<cmd>GFiles?<CR>')
 nnoremap('<leader>fb', '<cmd>Buffers<CR>')
 nnoremap('<leader>fw', '<cmd>Windows<CR>')
