@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use 'mhinz/vim-startify'
+  use 'lewis6991/gitsigns.nvim'
 
   use {
     'kyazdani42/nvim-tree.lua',
