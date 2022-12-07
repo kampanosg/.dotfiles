@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
   use 'mhinz/vim-startify'
   use 'lewis6991/gitsigns.nvim'
   use 'feline-nvim/feline.nvim' -- status bar
+  use 'akinsho/toggleterm.nvim'
 
   use {
     'kyazdani42/nvim-tree.lua',
