@@ -4,7 +4,7 @@ local nnoremap = require("kampanosg.keymap").nnoremap
 nnoremap('<leader>tb', '<cmd>ToggleTerm<CR>')
 
 -- NvimTree
-nnoremap("<leader>1", "<cmd>NvimTreeToggle<CR>")
+nnoremap("<leader>t1", "<cmd>NvimTreeToggle<CR>")
 nnoremap("<leader>tf", "<cmd>NvimTreeFocus<CR>")
 nnoremap("<leader>l", "<cmd>NvimTreeFindFile<CR>")
 
@@ -30,3 +30,14 @@ nnoremap('gc', '<cmd>lua vim.lsp.buf.incoming_calls()<CR>')
 nnoremap('gR', '<cmd>lua vim.lsp.buf.rename()<CR>')
 nnoremap('ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 
+-- Buffers
+nnoremap('<leader>1', '<Cmd>BufferLineGoToBuffer 1<CR>')
+nnoremap('<leader>2', '<Cmd>BufferLineGoToBuffer 2<CR>')
+nnoremap('<leader>3', '<Cmd>BufferLineGoToBuffer 3<CR>')
+nnoremap('<leader>4', '<Cmd>BufferLineGoToBuffer 4<CR>')
+nnoremap('<leader>5', '<Cmd>BufferLineGoToBuffer 5<CR>')
+nnoremap('<leader>6', '<Cmd>BufferLineGoToBuffer 6<CR>')
+nnoremap('<leader>7', '<Cmd>BufferLineGoToBuffer 7<CR>')
+nnoremap('<leader>8', '<Cmd>BufferLineGoToBuffer 8<CR>')
+nnoremap('<leader>9', '<Cmd>BufferLineGoToBuffer 9<CR>')
+nnoremap('<leader>$', '<Cmd>BufferLineGoToBuffer -1<CR>')
