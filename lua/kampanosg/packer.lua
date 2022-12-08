@@ -1,68 +1,44 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use 'lewis6991/gitsigns.nvim'
-  use 'feline-nvim/feline.nvim' -- status bar
+  -- Editor
+  use { 'junegunn/fzf', run = ":call fzf#install()" }
+  use 'junegunn/fzf.vim'
+  use 'feline-nvim/feline.nvim'
   use 'yamatsum/nvim-cursorline'
-  use {
-    "ThePrimeagen/refactoring.nvim",
-    requires = {
-        {"nvim-lua/plenary.nvim"},
-        {"nvim-treesitter/nvim-treesitter"}
-    }
-  }
-
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons'
-  } 
-
-  use 'williamboman/mason.nvim'    
-  use 'williamboman/mason-lspconfig.nvim'
-  use 'neovim/nvim-lspconfig' 
-  use {
-    'folke/todo-comments.nvim',
-    requires = 'nvim-lua/plenary.nvim'
   }
-
-  use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-  }
-
   use {
     'akinsho/bufferline.nvim',
     tag = "v3.*",
     requires = 'nvim-tree/nvim-web-devicons'
   }
 
-  -- Completion framework:
-  use 'hrsh7th/nvim-cmp' 
 
-  -- LSP completion source:
-  use 'hrsh7th/cmp-nvim-lsp'
-
-  -- Useful completion sources:
-  use 'hrsh7th/cmp-nvim-lua'
-  use 'hrsh7th/cmp-nvim-lsp-signature-help'
-  use 'hrsh7th/cmp-vsnip'                             
-  use 'hrsh7th/cmp-path'                              
-  use 'hrsh7th/cmp-buffer'                            
-  use 'hrsh7th/vim-vsnip' 
-
+  -- Coding
+  use 'lewis6991/gitsigns.nvim'
+--  use 'yamatsum/nvim-cursorline'
   use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      {"nvim-lua/plenary.nvim"},
+      {"nvim-treesitter/nvim-treesitter"}
+    }
   }
-  
-  -- rust
-  use 'simrat39/rust-tools.nvim'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 
-  use { 'junegunn/fzf', run = ":call fzf#install()" }
-  use { 'junegunn/fzf.vim' }
+
+  -- Languages
+  use {'neoclide/coc.nvim', branch = 'release'}
 
   -- Theme
   use 'navarasu/onedark.nvim'
