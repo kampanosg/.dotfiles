@@ -61,3 +61,14 @@ nnoremap('<leader>8', '<Cmd>BufferLineGoToBuffer 8<CR>')
 nnoremap('<leader>9', '<Cmd>BufferLineGoToBuffer 9<CR>')
 nnoremap('<leader>$', '<Cmd>BufferLineGoToBuffer -1<CR>')
 
+
+-- Code navigation
+nnoremap('gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+nnoremap('gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+nnoremap('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+nnoremap('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+nnoremap('<leader>==', '<cmd>lua vim.lsp.buf.format()<CR>')
+nnoremap('gc', '<cmd>lua vim.lsp.buf.incoming_calls()<CR>')
+nnoremap('gR', '<cmd>lua vim.lsp.buf.rename()<CR>')
+nnoremap('ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+nnoremap('K', '<cmd>lua vim.lsp.buf.hover()<CR>')
