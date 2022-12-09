@@ -5,11 +5,10 @@ return require('packer').startup(function(use)
 
   -- Editor
   use('tpope/vim-fugitive')
-  use("nvim-lua/plenary.nvim")
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  } 
+  use('nvim-lua/plenary.nvim')
+  use('nvim-telescope/telescope.nvim')
+  use('ThePrimeagen/git-worktree.nvim')
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } 
 
   -- Theme
   use 'navarasu/onedark.nvim'
