@@ -1,7 +1,7 @@
-# nvim-config
-This is my NeoVim configuration repo! I primarily use it for daily Go and Rust development.
+# NeoVim Configuration
+This is my NeoVim configuration! I primarily use it for daily Go and Rust development.
 
-Mainly storing it here so that I don't lose it but also to be able to roll-back whenever I break it 😅.
+Mainly storing it here so that I don't lose it and be able to roll-back whenever I break it 😅.
 
 It can be cloned directly into `~/.config/` and then renamed to `nvim`. [Packer](https://github.com/wbthomason/packer.nvim), is also required for plugin management. 
 
@@ -15,4 +15,6 @@ The following `Mason` packages are also required (Install with `:MasonInstall`
 * `codelldb`
 * `cpptools`
 
-![](https://media.giphy.com/media/5Zesu5VPNGJlm/giphy-downsized.gif)
+<p align="center">
+  <img src="https://media.giphy.com/media/1BXa2alBjrCXC/giphy.gif" alt="animated" />
+</p>
