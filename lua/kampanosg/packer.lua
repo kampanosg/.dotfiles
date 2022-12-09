@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
   use('nvim-telescope/telescope.nvim')
   use('ThePrimeagen/git-worktree.nvim')
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } 
+  use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
   use("mbbill/undotree")
 
 

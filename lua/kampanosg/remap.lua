@@ -41,3 +41,9 @@ end);
 
 -- UndoTree
 nnoremap("<D-u>", ":UndotreeToggle<CR>")
+
+
+-- NvimTree
+nnoremap("<leader>t1", "<cmd>NvimTreeToggle<CR>")
+nnoremap("<leader>tf", "<cmd>NvimTreeFocus<CR>")
+nnoremap("<D-l>", "<cmd>NvimTreeFindFile<CR>")
