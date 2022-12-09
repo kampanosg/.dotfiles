@@ -37,3 +37,7 @@ end);
 vnoremap("<leader>rm", function()
     require("refactoring").refactor("Extract Function")
 end);
+
+
+-- UndoTree
+nnoremap("<D-u>", ":UndotreeToggle<CR>")

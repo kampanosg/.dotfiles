@@ -9,8 +9,11 @@ return require('packer').startup(function(use)
   use('nvim-telescope/telescope.nvim')
   use('ThePrimeagen/git-worktree.nvim')
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } 
+  use("mbbill/undotree")
+
 
   -- Coding
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {
@@ -18,6 +21,7 @@ return require('packer').startup(function(use)
         {"nvim-treesitter/nvim-treesitter"}
     }
   }
+
 
   -- Theme
   use 'navarasu/onedark.nvim'
