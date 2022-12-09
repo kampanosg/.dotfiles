@@ -10,6 +10,10 @@ return require('packer').startup(function(use)
   use('ThePrimeagen/git-worktree.nvim')
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } 
   use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
+  use {
+    'akinsho/bufferline.nvim',
+    requires = 'nvim-tree/nvim-web-devicons'
+  }
   use("mbbill/undotree")
 
 
