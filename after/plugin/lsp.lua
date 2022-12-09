@@ -2,8 +2,8 @@ local Remap = require("kampanosg.keymap")
 local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
 
-local sumneko_root_path = "/home/mpaulson/personal/sumneko"
-local sumneko_binary = "/opt/homebrew/bin/lua-language-server" 
+local sumneko_root_path = "/Users/george.kampanos/.config/helpers/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
 
 -- Setup nvim-cmp.
 local cmp = require("cmp")
@@ -20,14 +20,7 @@ local lspkind = require("lspkind")
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			-- For `vsnip` user.
-			-- vim.fn["vsnip#anonymous"](args.body)
-
-			-- For `luasnip` user.
 			require("luasnip").lsp_expand(args.body)
-
-			-- For `ultisnips` user.
-			-- vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
@@ -53,10 +46,7 @@ cmp.setup({
 	},
 
 	sources = {
-		-- tabnine completion? yayaya
-
-		{ name = "cmp_tabnine" },
-
+		--{ name = "cmp_tabnine" },
 		{ name = "nvim_lsp" },
 
 		-- For vsnip user.
@@ -140,7 +130,6 @@ require("lspconfig").gopls.setup(config({
 	},
 }))
 
--- who even uses this?
 require("lspconfig").rust_analyzer.setup(config({
 	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
     settings = {

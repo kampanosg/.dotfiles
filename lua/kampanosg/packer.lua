@@ -10,9 +10,11 @@ return require('packer').startup(function(use)
   use('nvim-telescope/telescope.nvim')
   use('ThePrimeagen/git-worktree.nvim')
   use("mbbill/undotree")
+  use('nvim-tree/nvim-web-devicons') 
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } 
   use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
   use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
+  use { 'goolord/alpha-nvim', requires = 'nvim-tree/nvim-web-devicons' }
   
 
   -- Coding
@@ -26,19 +28,18 @@ return require('packer').startup(function(use)
   }
 
 
-  -- Coding
+  -- Languages
   use("neovim/nvim-lspconfig")
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/nvim-cmp")
-  use("tzachar/cmp-tabnine", { run = "./install.sh" })
   use("onsails/lspkind-nvim")
   use("nvim-lua/lsp_extensions.nvim")
   use("glepnir/lspsaga.nvim")
   use("simrat39/symbols-outline.nvim")
   use("L3MON4D3/LuaSnip")
   use("saadparwaiz1/cmp_luasnip")
-
+  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
   -- Theme
   use('navarasu/onedark.nvim')
