@@ -15,7 +15,8 @@ return require('packer').startup(function(use)
   use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
   use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
   use { 'goolord/alpha-nvim', requires = 'nvim-tree/nvim-web-devicons' }
-  
+  use('yamatsum/nvim-cursorline')
+
 
   -- Coding
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -31,15 +32,25 @@ return require('packer').startup(function(use)
   -- Languages
   use("neovim/nvim-lspconfig")
   use("hrsh7th/cmp-nvim-lsp")
+  use('hrsh7th/cmp-nvim-lua')
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/nvim-cmp")
+  use('hrsh7th/cmp-nvim-lsp-signature-help')
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/vim-vsnip'
   use("onsails/lspkind-nvim")
   use("nvim-lua/lsp_extensions.nvim")
   use("glepnir/lspsaga.nvim")
   use("simrat39/symbols-outline.nvim")
   use("L3MON4D3/LuaSnip")
   use("saadparwaiz1/cmp_luasnip")
-  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+  --use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+  use('williamboman/mason.nvim')
+  use('williamboman/mason-lspconfig.nvim')
+  use('simrat39/rust-tools.nvim')
+
 
   -- Theme
   use('navarasu/onedark.nvim')
