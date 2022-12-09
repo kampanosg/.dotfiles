@@ -1,4 +1,6 @@
-local nnoremap = require("kampanosg.keymap").nnoremap
+local Remap = require("kampanosg.keymap")
+local nnoremap = Remap.nnoremap
+local vnoremap = Remap.vnoremap
 
 -- Telescope
 nnoremap("<D-p>", ":Telescope<CR>")
@@ -26,3 +28,12 @@ end)
 nnoremap("<leader>fgw", function()
     require('telescope').extensions.git_worktree.git_worktrees()
 end)
+
+
+-- Refactoring
+vnoremap("<leader>rv", function()
+    require("refactoring").refactor("Extract Variable")
+end);
+vnoremap("<leader>rm", function()
+    require("refactoring").refactor("Extract Function")
+end);

@@ -10,6 +10,15 @@ return require('packer').startup(function(use)
   use('ThePrimeagen/git-worktree.nvim')
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } 
 
+  -- Coding
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+  }
+
   -- Theme
   use 'navarasu/onedark.nvim'
 
