@@ -5,17 +5,15 @@ return require('packer').startup(function(use)
 
   -- Editor
   use('tpope/vim-fugitive')
+  use('lewis6991/gitsigns.nvim')
   use('nvim-lua/plenary.nvim')
   use('nvim-telescope/telescope.nvim')
   use('ThePrimeagen/git-worktree.nvim')
+  use("mbbill/undotree")
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } 
   use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
-  use {
-    'akinsho/bufferline.nvim',
-    requires = 'nvim-tree/nvim-web-devicons'
-  }
-  use("mbbill/undotree")
-
+  use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
+  
 
   -- Coding
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -29,6 +27,7 @@ return require('packer').startup(function(use)
 
 
   -- Theme
-  use 'navarasu/onedark.nvim'
+  use('navarasu/onedark.nvim')
+  -- use('rose-pine/neovim')
 
 end)
