@@ -37,6 +37,8 @@ end);
 vnoremap("<leader>rm", function()
     require("refactoring").refactor("Extract Function")
 end);
+nnoremap("<leader>mj", "<cmd>m +1<CR>")
+nnoremap("<leader>mk", "<cmd>m -2<CR>")
 
 
 -- UndoTree
