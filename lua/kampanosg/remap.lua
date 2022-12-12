@@ -63,3 +63,9 @@ nnoremap('<leader>8', '<Cmd>BufferLineGoToBuffer 8<CR>')
 nnoremap('<leader>9', '<Cmd>BufferLineGoToBuffer 9<CR>')
 nnoremap('<leader>$', '<Cmd>BufferLineGoToBuffer -1<CR>')
 
+
+-- Harpoon
+nnoremap('<leader>ha', '<cmd>lua require("harpoon.mark").add_file()<CR>')
+nnoremap('<leader>hh', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>')
+nnoremap('<leader>hn', '<cmd>lua require("harpoon.ui").nav_next()<CR>')
+nnoremap('<leader>hb', '<cmd>lua require("harpoon.ui").nav_prev()<CR>')

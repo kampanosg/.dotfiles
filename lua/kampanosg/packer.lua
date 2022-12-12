@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
 
   -- Coding
   use('tpope/vim-commentary')
+  use('ThePrimeagen/harpoon')
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {
     "ThePrimeagen/refactoring.nvim",
@@ -47,7 +48,6 @@ return require('packer').startup(function(use)
   use("simrat39/symbols-outline.nvim")
   use("L3MON4D3/LuaSnip")
   use("saadparwaiz1/cmp_luasnip")
-  --use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
   use('williamboman/mason.nvim')
   use('williamboman/mason-lspconfig.nvim')
   use('simrat39/rust-tools.nvim')
