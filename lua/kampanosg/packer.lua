@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
 
 
   -- Coding
+  use('tpope/vim-commentary')
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {
     "ThePrimeagen/refactoring.nvim",
