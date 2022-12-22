@@ -39,6 +39,8 @@ vnoremap("<leader>rm", function()
 end);
 nnoremap("<leader>mj", "<cmd>m +1<CR>")
 nnoremap("<leader>mk", "<cmd>m -2<CR>")
+vnoremap("<leader>mj", "<cmd>m +1<CR>")
+vnoremap("<leader>mk", "<cmd>m -2<CR>")
 
 
 -- UndoTree
@@ -48,7 +50,7 @@ nnoremap("<D-u>", ":UndotreeToggle<CR>")
 -- NvimTree
 nnoremap("<leader>t1", "<cmd>NvimTreeToggle<CR>")
 nnoremap("<leader>tf", "<cmd>NvimTreeFocus<CR>")
-nnoremap("<D-l>", "<cmd>NvimTreeFindFile<CR>")
+nnoremap("<leader>tl", "<cmd>NvimTreeFindFile<CR>")
 
 
 -- Buffers
