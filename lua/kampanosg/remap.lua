@@ -3,29 +3,26 @@ local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
 
 -- Telescope
-nnoremap("<D-p>", ":Telescope<CR>")
-nnoremap("<leader>fa", function()
-    require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})
+nnoremap("<leader>op", ":Telescope<CR>")
+nnoremap("<leader>oa", function()
+    require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ") })
 end)
-nnoremap("<leader>fg>", function()
+nnoremap("<leader>og", function()
     require('telescope.builtin').git_files()
 end)
-nnoremap("<leader>ff", function()
+nnoremap("<leader>of", function()
     require('telescope.builtin').find_files()
 end)
-nnoremap("<leader>fb", function()
+nnoremap("<leader>ob", function()
     require('telescope.builtin').buffers()
 end)
-nnoremap("<leader>fh", function()
-    require('telescope.builtin').help_tags()
-end)
-nnoremap("<leader>fd", function()
+nnoremap("<leader>oh", function()
     require('kampanosg.telescope').search_dotfiles({ hidden = true })
 end)
-nnoremap("<leader>fgb", function()
+nnoremap("<leader>ogb", function()
     require('kampanosg.telescope').git_branches()
 end)
-nnoremap("<leader>fgw", function()
+nnoremap("<leader>ogw", function()
     require('telescope').extensions.git_worktree.git_worktrees()
 end)
 
@@ -71,3 +68,7 @@ nnoremap('<leader>ha', '<cmd>lua require("harpoon.mark").add_file()<CR>')
 nnoremap('<leader>hh', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>')
 nnoremap('<leader>hn', '<cmd>lua require("harpoon.ui").nav_next()<CR>')
 nnoremap('<leader>hb', '<cmd>lua require("harpoon.ui").nav_prev()<CR>')
+
+
+-- Code navigation etc shortcuts
+-- https://github.com/ray-x/navigator.lua#default-keymaps

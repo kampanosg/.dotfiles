@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
 
 
     -- Languages
-    use("neovim/nvim-lspconfig")
+    -- use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
     use('hrsh7th/cmp-nvim-lua')
     use("hrsh7th/nvim-cmp")
