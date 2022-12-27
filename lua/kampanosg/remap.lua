@@ -3,26 +3,26 @@ local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
 
 -- Telescope
-nnoremap("<leader>op", ":Telescope<CR>")
-nnoremap("<leader>oa", function()
+nnoremap("<leader>-p", ":Telescope<CR>")
+nnoremap("<leader>-a", function()
     require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ") })
 end)
-nnoremap("<leader>og", function()
+nnoremap("<leader>-g", function()
     require('telescope.builtin').git_files()
 end)
-nnoremap("<leader>of", function()
+nnoremap("<leader>-f", function()
     require('telescope.builtin').find_files()
 end)
-nnoremap("<leader>ob", function()
+nnoremap("<leader>-b", function()
     require('telescope.builtin').buffers()
 end)
-nnoremap("<leader>oh", function()
+nnoremap("<leader>-h", function()
     require('kampanosg.telescope').search_dotfiles({ hidden = true })
 end)
-nnoremap("<leader>ogb", function()
+nnoremap("<leader>-gb", function()
     require('kampanosg.telescope').git_branches()
 end)
-nnoremap("<leader>ogw", function()
+nnoremap("<leader>-gw", function()
     require('telescope').extensions.git_worktree.git_worktrees()
 end)
 
@@ -69,6 +69,11 @@ nnoremap('<leader>hh', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>')
 nnoremap('<leader>hn', '<cmd>lua require("harpoon.ui").nav_next()<CR>')
 nnoremap('<leader>hb', '<cmd>lua require("harpoon.ui").nav_prev()<CR>')
 
+
+-- Aerial
+nnoremap('<leader>|', '<cmd>AerialToggle<CR>')
+nnoremap('<leader>}', '<cmd>AerialNext<CR>')
+nnoremap('<leader>{', '<cmd>AerialPrev<CR>')
 
 -- Code navigation etc shortcuts
 -- https://github.com/ray-x/navigator.lua#default-keymaps
