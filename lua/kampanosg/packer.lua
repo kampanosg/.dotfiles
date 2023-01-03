@@ -8,7 +8,6 @@ return require('packer').startup(function(use)
     use('lewis6991/gitsigns.nvim')
     use('nvim-lua/plenary.nvim')
     use('nvim-telescope/telescope.nvim')
-    use('ThePrimeagen/git-worktree.nvim')
     use('nvim-tree/nvim-web-devicons')
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
     use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }

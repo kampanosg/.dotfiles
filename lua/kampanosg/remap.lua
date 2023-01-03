@@ -22,9 +22,6 @@ end)
 nnoremap("<leader>fgb", function()
     require('kampanosg.telescope').git_branches()
 end)
-nnoremap("<leader>fgw", function()
-    require('telescope').extensions.git_worktree.git_worktrees()
-end)
 
 
 -- Refactoring
