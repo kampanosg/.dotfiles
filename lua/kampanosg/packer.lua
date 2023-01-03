@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
 
     -- Coding
     use('tpope/vim-commentary')
+    use('mbbill/undotree')
     use('ThePrimeagen/harpoon')
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use {
