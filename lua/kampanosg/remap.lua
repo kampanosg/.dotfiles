@@ -3,26 +3,26 @@ local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
 
 -- Telescope
-nnoremap("<leader>-p", ":Telescope<CR>")
-nnoremap("<leader>-a", function()
+nnoremap("<leader>fp", ":Telescope<CR>")
+nnoremap("<leader>fa", function()
     require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ") })
 end)
-nnoremap("<leader>-g", function()
+nnoremap("<leader>fg", function()
     require('telescope.builtin').git_files()
 end)
-nnoremap("<leader>-f", function()
+nnoremap("<leader>ff", function()
     require('telescope.builtin').find_files()
 end)
-nnoremap("<leader>-b", function()
+nnoremap("<leader>fb", function()
     require('telescope.builtin').buffers()
 end)
-nnoremap("<leader>-h", function()
+nnoremap("<leader>fh", function()
     require('kampanosg.telescope').search_dotfiles({ hidden = true })
 end)
-nnoremap("<leader>-gb", function()
+nnoremap("<leader>fgb", function()
     require('kampanosg.telescope').git_branches()
 end)
-nnoremap("<leader>-gw", function()
+nnoremap("<leader>fgw", function()
     require('telescope').extensions.git_worktree.git_worktrees()
 end)
 
@@ -41,7 +41,7 @@ vnoremap("<leader>mk", "<cmd>m -2<CR>")
 
 
 -- UndoTree
-nnoremap("<D-u>", ":UndotreeToggle<CR>")
+nnoremap("<leader>U", "<cmd>UndotreeToggle<CR>")
 
 
 -- NvimTree
@@ -75,5 +75,5 @@ nnoremap('<leader>|', '<cmd>AerialToggle<CR>')
 nnoremap('<leader>}', '<cmd>AerialNext<CR>')
 nnoremap('<leader>{', '<cmd>AerialPrev<CR>')
 
--- Code navigation etc shortcuts
--- https://github.com/ray-x/navigator.lua#default-keymaps
+
+-- Code navigation can be found in `lsp.lua`

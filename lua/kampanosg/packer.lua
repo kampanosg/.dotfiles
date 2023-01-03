@@ -13,7 +13,6 @@ return require('packer').startup(function(use)
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
     use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
     use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
-    use { 'goolord/alpha-nvim', requires = 'nvim-tree/nvim-web-devicons' }
     use('yamatsum/nvim-cursorline')
     use('stevearc/aerial.nvim')
 
@@ -29,27 +28,30 @@ return require('packer').startup(function(use)
             { "nvim-treesitter/nvim-treesitter" }
         }
     }
-    use({
-        'ray-x/navigator.lua',
+
+
+    -- LSP
+    use {
+        'VonHeikemen/lsp-zero.nvim',
         requires = {
-            { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+            -- LSP Support
             { 'neovim/nvim-lspconfig' },
-        },
-    })
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
 
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
 
-    -- Languages
-    use("neovim/nvim-lspconfig")
-    use("hrsh7th/cmp-nvim-lsp")
-    use('hrsh7th/cmp-nvim-lua')
-    use('hrsh7th/nvim-cmp')
-    use('hrsh7th/cmp-nvim-lsp-signature-help')
-    use('hrsh7th/cmp-vsnip')
-    use('hrsh7th/cmp-path')
-    use('hrsh7th/cmp-buffer')
-    use('williamboman/mason.nvim')
-    use('williamboman/mason-lspconfig.nvim')
-
+            -- Snippets
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
+        }
+    }
 
     -- Theme
     use('navarasu/onedark.nvim')
