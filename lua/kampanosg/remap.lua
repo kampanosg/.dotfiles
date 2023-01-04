@@ -74,3 +74,7 @@ nnoremap('<leader>{', '<cmd>AerialPrev<CR>')
 
 
 -- Code navigation can be found in `lsp.lua`
+
+
+-- Others
+nnoremap('<leader>dl', '<cmd>:t.<CR>')
