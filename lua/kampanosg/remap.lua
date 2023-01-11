@@ -78,3 +78,5 @@ nnoremap('<leader>{', '<cmd>AerialPrev<CR>')
 
 -- Others
 nnoremap('<leader>dl', '<cmd>:t.<CR>')
+nnoremap('<leader>tspd', '<cmd>TransparentDisable<CR>')
+nnoremap('<leader>tspe', '<cmd>TransparentEnable<CR>')
