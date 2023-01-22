@@ -3,7 +3,7 @@ This is my NeoVim configuration! I primarily use it for daily Go and Rust develo
 
 Mainly storing it here so that I don't lose it and be able to roll-back whenever I break it 😅.
 
-It can be cloned directly into `~/.config/` and then renamed to `nvim`. [Packer](https://github.com/wbthomason/packer.nvim), is also required for plugin management. 
+It can be copied directly into `~/.config/` and then install plugins and LSPs. [Packer](https://github.com/wbthomason/packer.nvim), is also required for plugin management. 
 
 ## Dependencies
 
