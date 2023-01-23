@@ -2,10 +2,16 @@ local Remap = require("kampanosg.keymap")
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
 
--- Telescope
+vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<D-c>', '+y<C-R>', { noremap = true, silent = true})
+
+-- -- Telescope
 nnoremap("<leader>fp", ":Telescope<CR>")
 nnoremap("<leader>fa", function()
-    require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ") })
+    require('telescope.builtin').grep_string({ search = vim.fn.input("🔎 ") })
 end)
 nnoremap("<leader>fg", function()
     require('telescope.builtin').git_files()
