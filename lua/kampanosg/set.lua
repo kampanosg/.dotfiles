@@ -35,6 +35,7 @@ vim.opt.shortmess:append("c")
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+vim.opt.clipboard = "unnamedplus"
 
 -- LSP Diagnostics Options Setup 
 local sign = function(opts)

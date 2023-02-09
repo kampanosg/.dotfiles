@@ -2,10 +2,16 @@ local Remap = require("kampanosg.keymap")
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
 
--- Telescope
+vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<D-c>', '+y<C-R>', { noremap = true, silent = true})
+
+-- -- Telescope
 nnoremap("<leader>fp", ":Telescope<CR>")
 nnoremap("<leader>fa", function()
-    require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ") })
+    require('telescope.builtin').grep_string({ search = vim.fn.input("🔎 ") })
 end)
 nnoremap("<leader>fg", function()
     require('telescope.builtin').git_files()
@@ -80,3 +86,12 @@ nnoremap('<leader>{', '<cmd>AerialPrev<CR>')
 nnoremap('<leader>dl', '<cmd>:t.<CR>')
 nnoremap('<leader>tspd', '<cmd>TransparentDisable<CR>')
 nnoremap('<leader>tspe', '<cmd>TransparentEnable<CR>')
+
+
+-- Trouble
+nnoremap("<leader>xx", "<cmd>TroubleToggle<CR>", { silent = true, noremap = true })
+nnoremap("<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
+nnoremap("<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
+nnoremap("<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
+nnoremap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
+nnoremap("xR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })

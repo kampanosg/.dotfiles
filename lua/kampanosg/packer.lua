@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
             { "nvim-treesitter/nvim-treesitter" }
         }
     }
+    use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
 
 
     -- LSP
@@ -55,5 +56,5 @@ return require('packer').startup(function(use)
 
     -- Theme
     use('navarasu/onedark.nvim')
-    use('xiyaowong/nvim-transparent')
+    -- use('xiyaowong/nvim-transparent')
 end)
