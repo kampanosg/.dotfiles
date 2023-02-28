@@ -1,6 +1,7 @@
 local Remap = require("kampanosg.keymap")
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
+local inoremap = Remap.inoremap
 
 vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
@@ -77,6 +78,11 @@ nnoremap('<leader>hb', '<cmd>lua require("harpoon.ui").nav_prev()<CR>')
 nnoremap('<leader>|', '<cmd>AerialToggle<CR>')
 nnoremap('<leader>}', '<cmd>AerialNext<CR>')
 nnoremap('<leader>{', '<cmd>AerialPrev<CR>')
+
+
+-- Terminal
+nnoremap('<leader>tt', '<cmd>ToggleTerm<CR>')
+inoremap('<leader>tt', '<Esc><cmd>ToggleTerm<CR>')
 
 
 -- Code navigation can be found in `lsp.lua`

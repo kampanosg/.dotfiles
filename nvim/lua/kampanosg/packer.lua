@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
     use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
     use('yamatsum/nvim-cursorline')
     use('stevearc/aerial.nvim')
+    use('akinsho/toggleterm.nvim')
 
 
     -- Coding
