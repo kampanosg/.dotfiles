@@ -1,0 +1,23 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.autoSave": "afterDelay",
+    "go.toolsManagement.autoUpdate": true,
+    "editor.fontFamily": "'Hack Nerd Font', 'Input Mono', 'FiraCode Nerd Font', Consolas, 'Courier New', monospace",
+    "editor.cursorStyle": "line-thin",
+    "workbench.iconTheme": "material-icon-theme",
+    "settingsSync.ignoredExtensions": [
+        "ms-vscode-remote.remote-wsl"
+    ],
+    "editor.fontSize": 14,
+    "workbench.preferredDarkColorTheme": "GitHub Dark",
+    "debug.allowBreakpointsEverywhere": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "window.commandCenter": true,
+    "workbench.preferredLightColorTheme": "GitHub Light",
+    "git.openRepositoryInParentFolders": "always",
+    "workbench.colorTheme": "Gatito Theme",
+    "editor.inlineSuggest.enabled": true,
+    "editor.lineNumbers": "relative",
+    "editor.guides.bracketPairs": "active",
+    "editor.copyWithSyntaxHighlighting": false
+}
