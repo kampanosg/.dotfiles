@@ -4,7 +4,7 @@
     "go.toolsManagement.autoUpdate": true,
     "editor.fontFamily": "'Hack Nerd Font', 'Input Mono', 'FiraCode Nerd Font', Consolas, 'Courier New', monospace",
     "editor.cursorStyle": "line-thin",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
     "settingsSync.ignoredExtensions": [
         "ms-vscode-remote.remote-wsl"
     ],
@@ -15,9 +15,10 @@
     "window.commandCenter": true,
     "workbench.preferredLightColorTheme": "GitHub Light",
     "git.openRepositoryInParentFolders": "always",
-    "workbench.colorTheme": "Gatito Theme",
+    "workbench.colorTheme": "Monokai Pro (Filter Machine)",
     "editor.inlineSuggest.enabled": true,
     "editor.lineNumbers": "relative",
     "editor.guides.bracketPairs": "active",
-    "editor.copyWithSyntaxHighlighting": false
+    "editor.copyWithSyntaxHighlighting": false,
+    "redhat.telemetry.enabled": false
 }
