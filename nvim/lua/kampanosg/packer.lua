@@ -67,5 +67,5 @@ return require('packer').startup(function(use)
 
     -- Theme
     use('navarasu/onedark.nvim')
-    -- use('xiyaowong/nvim-transparent')
+    use('marko-cerovac/material.nvim')
 end)
