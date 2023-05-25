@@ -14,7 +14,6 @@ return require('packer').startup(function(use)
     use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
     use('yamatsum/nvim-cursorline')
     use('stevearc/aerial.nvim')
-    use('akinsho/toggleterm.nvim')
 
 
     -- Coding
@@ -40,6 +39,8 @@ return require('packer').startup(function(use)
             })
         end
     }
+    use('ray-x/go.nvim')
+    use('ray-x/guihua.lua')
 
 
     -- LSP
@@ -66,6 +67,6 @@ return require('packer').startup(function(use)
     }
 
     -- Theme
-    use('navarasu/onedark.nvim')
+    -- use('navarasu/onedark.nvim')
     use('marko-cerovac/material.nvim')
 end)
