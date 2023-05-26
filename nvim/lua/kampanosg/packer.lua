@@ -1,17 +1,19 @@
 return require('packer').startup(function(use)
 
+
     -- Packer can manage itself
     use('wbthomason/packer.nvim')
 
+
     -- Editor
     use('tpope/vim-fugitive')
-    use('lewis6991/gitsigns.nvim')
     use('nvim-lua/plenary.nvim')
     use('nvim-telescope/telescope.nvim')
     use('nvim-tree/nvim-web-devicons')
-    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-    use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
+    use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
+    use { 'nvim-tree/nvim-tree.lua', requires = 'nvim-tree/nvim-web-devicons' }
     use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
+    use { 'lewis6991/gitsigns.nvim', tag = 'release' }
     use('yamatsum/nvim-cursorline')
     use('stevearc/aerial.nvim')
 
@@ -21,13 +23,6 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('ThePrimeagen/harpoon')
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use {
-        "ThePrimeagen/refactoring.nvim",
-        requires = {
-            { "nvim-lua/plenary.nvim" },
-            { "nvim-treesitter/nvim-treesitter" }
-        }
-    }
     use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
     use {
         'johnfrankmorgan/whitespace.nvim',
@@ -66,7 +61,8 @@ return require('packer').startup(function(use)
         }
     }
 
+
     -- Theme
     -- use('navarasu/onedark.nvim')
-    use('marko-cerovac/material.nvim')
+    use 'marko-cerovac/material.nvim'
 end)

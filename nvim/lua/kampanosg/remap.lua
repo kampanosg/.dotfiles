@@ -31,13 +31,7 @@ nnoremap("<leader>fgb", function()
 end)
 
 
--- Refactoring
-vnoremap("<leader>rv", function()
-    require("refactoring").refactor("Extract Variable")
-end);
-vnoremap("<leader>rm", function()
-    require("refactoring").refactor("Extract Function")
-end);
+-- Move a line of code up or down
 nnoremap("<leader>mj", "<cmd>m +1<CR>")
 nnoremap("<leader>mk", "<cmd>m -2<CR>")
 vnoremap("<leader>mj", "<cmd>m +1<CR>")
@@ -81,8 +75,8 @@ nnoremap('<leader>{', '<cmd>AerialPrev<CR>')
 
 
 -- Terminal
-nnoremap('<leader>tt', '<cmd>ToggleTerm<CR>')
-inoremap('<leader>tt', '<Esc><cmd>ToggleTerm<CR>')
+-- nnoremap('<leader>tt', '<cmd>ToggleTerm<CR>')
+-- inoremap('<leader>tt', '<Esc><cmd>ToggleTerm<CR>')
 
 
 -- Code navigation can be found in `lsp.lua`
@@ -90,8 +84,8 @@ inoremap('<leader>tt', '<Esc><cmd>ToggleTerm<CR>')
 
 -- Others
 nnoremap('<leader>dl', '<cmd>:t.<CR>')
-nnoremap('<leader>tspd', '<cmd>TransparentDisable<CR>')
-nnoremap('<leader>tspe', '<cmd>TransparentEnable<CR>')
+-- nnoremap('<leader>tspd', '<cmd>TransparentDisable<CR>')
+-- nnoremap('<leader>tspe', '<cmd>TransparentEnable<CR>')
 
 
 -- Trouble
