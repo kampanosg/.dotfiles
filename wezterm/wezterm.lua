@@ -4,7 +4,7 @@ local act = wezterm.action
 return {
   window_padding = { top = 0, bottom = 0, left = 0, right = 0 },
   font = wezterm.font({
-    family = "Hack Nerd Font Mono",
+    family = "JetBrainsMono Nerd Font",
   }),
   font_size = 15,
   color_scheme = "saturn",
