@@ -29,6 +29,9 @@ end)
 nnoremap("<leader>fgb", function()
     require('kampanosg.telescope').git_branches()
 end)
+nnoremap("<leader>f;", function()
+    require('telescope.builtin').resume()
+end)
 
 
 -- Move a line of code up or down
