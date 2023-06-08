@@ -42,6 +42,20 @@ alias x="exit"
 alias ll="exa -lah --git --icons --group-directories-first"
 alias ls="exa -1 --icons --group-directories-first"
 
+# K8
+alias k="kubectl"
+alias kctx="kubectx"
+alias kns="kubens"
+alias ks="kubeseal"
+
+# Tmux
+alias t="tmux"
+alias tn="tmux new -s"
+alias ta="tmux attach -t"
+alias ts="tmux detach"
+alias tls="tmux ls"
+alias tks="tmux kill-session -t"
+
 ###### REDACTED ######
 ###### REDACTED ######
 ###### REDACTED ######
