@@ -111,3 +111,8 @@ export GPG_TTY=$(tty)
 export PATH=$PATH:$(go env GOPATH)/bin
 
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
+tmux-window-name() {
+	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+}
+add-zsh-hook chpwd tmux-window-name
