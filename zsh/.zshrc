@@ -81,6 +81,7 @@ alias gsw="git switch"
 alias gswc="git switch -c"
 alias gcom="git checkout master"
 alias gwa="git worktree add"
+alias gwr="git worktree remove"
 
 # GCP aliases
 alias gcp-login="gcloud auth login"
