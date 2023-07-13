@@ -7,7 +7,7 @@ return {
     family = "JetBrainsMono Nerd Font",
   }),
   font_size = 15,
-  color_scheme = "saturn",
+  color_scheme = "Adventure Time (Gogh)",
   use_fancy_tab_bar = true,
   hide_tab_bar_if_only_one_tab = false,
   send_composed_key_when_left_alt_is_pressed = true,
