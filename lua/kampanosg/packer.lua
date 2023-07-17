@@ -1,17 +1,28 @@
 return require('packer').startup(function(use)
 
+
     -- Packer can manage itself
     use('wbthomason/packer.nvim')
 
+
+    -- Theme
+    -- use('navarasu/onedark.nvim')
+    use('marko-cerovac/material.nvim')
+    use {
+        'kampanosg/grape.nvim',
+        requires = 'tjdevries/colorbuddy.vim',
+    }
+
+
     -- Editor
     use('tpope/vim-fugitive')
-    use('lewis6991/gitsigns.nvim')
     use('nvim-lua/plenary.nvim')
     use('nvim-telescope/telescope.nvim')
     use('nvim-tree/nvim-web-devicons')
-    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-    use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
+    use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
+    use { 'nvim-tree/nvim-tree.lua', requires = 'nvim-tree/nvim-web-devicons' }
     use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
+    use { 'lewis6991/gitsigns.nvim', tag = 'release' }
     use('yamatsum/nvim-cursorline')
     use('stevearc/aerial.nvim')
 
@@ -21,14 +32,19 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('ThePrimeagen/harpoon')
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use {
-        "ThePrimeagen/refactoring.nvim",
-        requires = {
-            { "nvim-lua/plenary.nvim" },
-            { "nvim-treesitter/nvim-treesitter" }
-        }
-    }
     use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
+    use {
+        'johnfrankmorgan/whitespace.nvim',
+        config = function ()
+            require('whitespace-nvim').setup({
+                highlight = 'DiffDelete',
+                ignored_filetypes = { 'TelescopePrompt', 'Trouble', 'help' },
+                ignore_terminal = true,
+            })
+        end
+    }
+    use('ray-x/go.nvim')
+    use('ray-x/guihua.lua')
 
 
     -- LSP
@@ -53,8 +69,4 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     }
-
-    -- Theme
-    use('navarasu/onedark.nvim')
-    -- use('xiyaowong/nvim-transparent')
 end)

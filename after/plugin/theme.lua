@@ -1,4 +1,1 @@
-require('onedark').setup {
-    style = 'cool',
-}
-require('onedark').load()
+require('colorbuddy').colorscheme('grape')

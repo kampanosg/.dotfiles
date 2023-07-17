@@ -1,17 +1,57 @@
 require("kampanosg")
 
-local g = vim.g
-local o = vim.o
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
 
-if g.neovide then
-    o.guifont = "Hack Nerd Font:h16:#e-subpixelantialias"
-    g.neovide_transparency = 0.98
-    g.transparency = 0.98
-    g.neovide_no_idle = true
-    g.neovide_confirm_quit = true
-    g.neovide_remember_window_size = true
-    g.neovide_input_use_logo = true
-    g.neovide_cursor_trail_size = 0.5
-    g.neovide_cursor_vfx_mode = "pixiedust"
+local function on_attach(bufnr)
+  local api = require('nvim-tree.api')
+
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  api.config.mappings.default_on_attach(bufnr)
+
+  vim.keymap.set('n', 'O', '', { buffer = bufnr })
+  vim.keymap.del('n', 'O', { buffer = bufnr })
+  vim.keymap.set('n', '<2-RightMouse>', '', { buffer = bufnr })
+  vim.keymap.del('n', '<2-RightMouse>', { buffer = bufnr })
+  vim.keymap.set('n', 'D', '', { buffer = bufnr })
+  vim.keymap.del('n', 'D', { buffer = bufnr })
+  vim.keymap.set('n', 'E', '', { buffer = bufnr })
+  vim.keymap.del('n', 'E', { buffer = bufnr })
+
+  vim.keymap.set('n', 'A', api.tree.expand_all, opts('Expand All'))
+  vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+  vim.keymap.set('n', 'C', api.tree.change_root_to_node, opts('CD'))
+  vim.keymap.set('n', 'P', function()
+    local node = api.tree.get_node_under_cursor()
+    print(node.absolute_path)
+  end, opts('Print Node Path'))
+
+  vim.keymap.set('n', 'Z', api.node.run.system, opts('Run System'))
 end
+
+
+require("nvim-tree").setup({
+  on_attach = on_attach,
+  sort_by = "case_sensitive",
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = false,
+  },
+  filters = {
+    dotfiles = false,
+  },
+  git = {
+    enable = true,
+	ignore = false,
+	show_on_dirs = true,
+	timeout = 400,
+  }
+})
+
 
