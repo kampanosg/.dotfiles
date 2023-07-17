@@ -6,29 +6,13 @@ return {
   font = wezterm.font({
     family = "JetBrainsMono Nerd Font",
   }),
-  font_size = 15,
-  color_scheme = "Adventure Time (Gogh)",
+  font_size = 16,
+  color_scheme = "Material (base16)",
   use_fancy_tab_bar = true,
-  hide_tab_bar_if_only_one_tab = false,
+  hide_tab_bar_if_only_one_tab = true,
   send_composed_key_when_left_alt_is_pressed = true,
   send_composed_key_when_right_alt_is_pressed = false,
   use_ime = false,
   keys = {
-    { key = "_", mods = "CTRL|SHIFT", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
-    { key = "W", mods = "CMD|SHIFT", action = act.CloseCurrentPane { confirm = true } },
-    { key = "|", mods = "CTRL|SHIFT", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-    { key = "A", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
-    { key = "D", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },
-    { key = "S", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
-    { key = "W", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Up") },
-    { key = "LeftArrow", mods = "CTRL|SHIFT", action = act.AdjustPaneSize { "Left", 5 } },
-    { key = "RightArrow", mods = "CTRL|SHIFT", action = act.AdjustPaneSize { "Right", 5 } },
-    { key = "DownArrow", mods = "CTRL|SHIFT", action = act.AdjustPaneSize { "Down", 5 } },
-    { key = "UpArrow", mods = "CTRL|SHIFT", action = act.AdjustPaneSize { "Up", 5 } },
-    { key = "LeftArrow", mods = "CMD", action = act.ActivateTabRelative(-1) },
-    { key = "RightArrow", mods = "CMD", action = act.ActivateTabRelative(1) },
-    { key = "LeftArrow", mods = "CMD|SHIFT", action = act.MoveTabRelative(-1) },
-    { key = "RightArrow", mods = "CMD|SHIFT", action = act.MoveTabRelative(1) },
   }
-
 }
