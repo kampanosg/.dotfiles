@@ -69,4 +69,12 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' },
         }
     }
+<<<<<<< HEAD:lua/kampanosg/packer.lua
+=======
+
+
+    -- Theme
+    -- use('navarasu/onedark.nvim')
+    use 'marko-cerovac/material.nvim'
+>>>>>>> e710babd5cc561960664865e244de5b966967463:nvim/lua/kampanosg/packer.lua
 end)

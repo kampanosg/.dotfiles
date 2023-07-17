@@ -1,20 +1,10 @@
-# NeoVim Configuration
-This is my NeoVim configuration! I primarily use it for daily Go and Rust development.
+# .dotfiles
+Welcome to my .dotfiles repository on GitHub 👨‍💻⚙️
 
-Mainly storing it here so that I don't lose it and be able to roll-back whenever I break it 😅.
+This repository contains all of my configuration files for various programs and tools that I use for day to day dev. It also serves as a backup for when I mess up.
 
-It can be cloned directly into `~/.config/` and then renamed to `nvim`. [Packer](https://github.com/wbthomason/packer.nvim), is also required for plugin management. 
-
-## Dependencies
-
-Run `:PackerSync` to pull the plugins.
-The following `Mason` packages are also required (Install with `:MasonInstall`
-* `gopls`
-* `rust-analyzer`
-* `lua-language-server`
-* `codelldb`
-* `cpptools`
+Each dir contains a `README` file with usage instructions, so feel free to use them if you find them useful. 
 
 <p align="center">
-  <img src="https://media.giphy.com/media/1BXa2alBjrCXC/giphy.gif" alt="animated" />
+  <img src="https://media.giphy.com/media/WHZef2JRSDCxTeoYH1/giphy.gif" />
 </p>
