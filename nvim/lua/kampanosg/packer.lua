@@ -6,7 +6,6 @@ return require('packer').startup(function(use)
 
 
     -- Theme
-    -- use('navarasu/onedark.nvim')
     use('marko-cerovac/material.nvim')
     use {
         'kampanosg/grape.nvim',
