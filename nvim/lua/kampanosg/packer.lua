@@ -6,11 +6,7 @@ return require('packer').startup(function(use)
 
 
     -- Theme
-    use('marko-cerovac/material.nvim')
-    use {
-        'kampanosg/grape.nvim',
-        requires = 'tjdevries/colorbuddy.vim',
-    }
+    use { 'projekt0n/github-nvim-theme' }
 
 
     -- Editor

@@ -1,5 +1,2 @@
--- require('onedark').setup {
---     style = 'cool',
--- }
--- require('onedark').load()
-vim.cmd 'colorscheme material'
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
+vim.cmd('colorscheme github_dark')
