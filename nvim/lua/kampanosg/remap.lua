@@ -92,9 +92,8 @@ nnoremap('<leader>dl', '<cmd>:t.<CR>')
 
 
 -- Trouble
-nnoremap("<leader>xx", "<cmd>TroubleToggle<CR>", { silent = true, noremap = true })
-nnoremap("<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
-nnoremap("<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
-nnoremap("<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
-nnoremap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
-nnoremap("xR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
+nnoremap("<leader>tt", "<cmd>TroubleToggle<CR>", { silent = true, noremap = true })
+nnoremap("<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
+nnoremap("<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
+nnoremap("<leader>tl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
+nnoremap("<leader>tq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
