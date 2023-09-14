@@ -162,6 +162,9 @@ require('lazy').setup({
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {}
     },
+    {
+        'github/copilot.vim'
+    },
 
     -- lsp
     {
