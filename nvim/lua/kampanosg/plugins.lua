@@ -112,6 +112,9 @@ require('lazy').setup({
        'tpope/vim-commentary'
     },
     {
+        'tpope/vim-surround'
+    },
+    {
         'dnlhc/glance.nvim',
         keys = {
             { '<leader>gd', '<cmd>Glance definitions<cr>', desc = 'show definition' },
