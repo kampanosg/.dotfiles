@@ -2,12 +2,12 @@ require('lazy').setup({
 
     -- theme
     {
-        'projekt0n/github-nvim-theme',
-        lazy = false,
+        'catppuccin/nvim',
+        name = 'catppuccin',
         priority = 1000,
         config = function ()
             vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
-            vim.cmd('colorscheme github_dark')
+            vim.cmd('colorscheme catppuccin-mocha') -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
         end
     },
 
@@ -73,7 +73,8 @@ require('lazy').setup({
             require('lualine').setup()
         end
     },
-    {'romgrk/barbar.nvim',
+    {
+        'romgrk/barbar.nvim',
         dependencies = {
             'lewis6991/gitsigns.nvim',
             'nvim-tree/nvim-web-devicons',
@@ -96,7 +97,7 @@ require('lazy').setup({
     },
     {
         'yamatsum/nvim-cursorline',
-        config = function()
+        config = function ()
             require('nvim-cursorline').setup {
                 cursorline = {
                     enable = true,
@@ -107,12 +108,10 @@ require('lazy').setup({
         end
     },
 
+
     -- coding
     {
-       'tpope/vim-commentary'
-    },
-    {
-        'tpope/vim-surround'
+        'tpope/vim-commentary'
     },
     {
         'dnlhc/glance.nvim',
@@ -164,6 +163,11 @@ require('lazy').setup({
     },
     {
         'github/copilot.vim'
+    },
+    {
+	    'chrisgrieser/nvim-origami',
+	    event = "BufReadPost", -- later or on keypress would prevent saving folds
+	    opts = true, -- needed even when using default config
     },
 
     -- lsp
