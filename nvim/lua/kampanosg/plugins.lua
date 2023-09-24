@@ -5,6 +5,7 @@ require('lazy').setup({
         'catppuccin/nvim',
         name = 'catppuccin',
         priority = 1000,
+        lazy = false,
         config = function ()
             vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
             vim.cmd('colorscheme catppuccin-mocha') -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
@@ -165,9 +166,24 @@ require('lazy').setup({
         'github/copilot.vim'
     },
     {
-	    'chrisgrieser/nvim-origami',
-	    event = "BufReadPost", -- later or on keypress would prevent saving folds
-	    opts = true, -- needed even when using default config
+        'kevinhwang91/nvim-ufo',
+        event = "BufRead",
+        keys = {
+            { '<leader>zc', '<cmd>foldclose<cr>', desc = 'closes a fold', },
+            { '<leader>zo', '<cmd>foldopen<cr>', desc = 'closes a fold', },
+        },
+        dependencies = {
+            { 'kevinhwang91/promise-async' },
+        },
+        config = function()
+            vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+            vim.o.foldcolumn = "1" 
+            vim.o.foldlevel = 99 
+            vim.o.foldlevelstart = 99
+            vim.o.foldenable = true
+
+            require('ufo').setup()
+        end,
     },
 
     -- lsp
