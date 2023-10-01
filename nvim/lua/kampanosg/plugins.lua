@@ -169,7 +169,7 @@ require('lazy').setup({
         'kevinhwang91/nvim-ufo',
         event = "BufRead",
         keys = {
-            { '<leader>zc', '<cmd>foldclose<cr>', desc = 'closes a fold', },
+            { '<leader>zf', '<cmd>foldclose<cr>', desc = 'closes a fold', },
             { '<leader>zo', '<cmd>foldopen<cr>', desc = 'closes a fold', },
         },
         dependencies = {
