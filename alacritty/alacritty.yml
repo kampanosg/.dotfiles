@@ -1,0 +1,80 @@
+env:
+  TERM: xterm-256color
+  WINIT_X11_SCALE_FACTOR: "1.0"
+
+window:
+  dimensions:
+    columns: 0
+    lines: 0
+  padding:
+    x: 2
+    y: 2
+  dynamic_padding: false
+  decorations: full
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: "JetBrainsMono Nerd Font Propo"
+  bold:
+    family: "JetBrainsMono Nerd Font Propo"
+  italic:
+    family: "JetBrainsMono Nerd Font Propo"
+  size: 13.5
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+colors:
+  primary:
+    background: "0x073642"
+    foreground: "0x93a1a1"
+  cursor:
+    text: "0x002b36"
+    cursor: "0x93a1a1"
+  normal:
+    black: "0x002b36"
+    red: "0xdc322f"
+    green: "0x859900"
+    yellow: "0xb58900"
+    blue: "0x268bd2"
+    magenta: "0x6c71c4"
+    cyan: "0x2aa198"
+    white: "0x93a1a1"
+  bright:
+    black: "0x657b83"
+    red: "0xdc322f"
+    green: "0x859900"
+    yellow: "0xb58900"
+    blue: "0x268bd2"
+    magenta: "0x6c71c4"
+    cyan: "0x2aa198"
+    white: "0xfdf6e3"
+  indexed_colors:
+    - { index: 16, color: "0xcb4b16" }
+    - { index: 17, color: "0xd33682" }
+    - { index: 18, color: "0x073642" }
+    - { index: 19, color: "0x586e75" }
+    - { index: 20, color: "0x839496" }
+    - { index: 21, color: "0xeee8d5" }
+
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  save_to_clipboard: false
+
+window.dynamic_title: true
+
+cursor:
+  style: Beam
+  unfocused_hollow: true
+
+live_config_reload: true
+
+shell:
+  program: /bin/zsh
