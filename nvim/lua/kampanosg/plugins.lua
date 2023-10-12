@@ -2,13 +2,14 @@ require('lazy').setup({
 
     -- theme
     {
-        'catppuccin/nvim',
-        name = 'catppuccin',
-        priority = 1000,
+        "folke/tokyonight.nvim",
         lazy = false,
+        priority = 1000,
+        opts = {},
         config = function ()
             vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
-            vim.cmd('colorscheme catppuccin-mocha') -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+            vim.cmd('colorscheme tokyonight-night')
+            vim.cmd('highlight Normal ctermbg=NONE guibg=NONE')
         end
     },
 
@@ -194,8 +195,8 @@ require('lazy').setup({
         },
         config = function()
             vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-            vim.o.foldcolumn = "1" 
-            vim.o.foldlevel = 99 
+            vim.o.foldcolumn = "1"
+            vim.o.foldlevel = 99
             vim.o.foldlevelstart = 99
             vim.o.foldenable = true
 
