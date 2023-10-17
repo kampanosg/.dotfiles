@@ -2,18 +2,25 @@ require('lazy').setup({
 
     -- theme
     {
-        "folke/tokyonight.nvim",
+        'projekt0n/github-nvim-theme',
         lazy = false,
         priority = 1000,
-        opts = {},
         config = function ()
             vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
-            vim.cmd('colorscheme tokyonight-night')
+            vim.cmd('colorscheme github_dark_dimmed')
             vim.cmd('highlight Normal ctermbg=NONE guibg=NONE')
         end
     },
 
     -- editor
+    {
+        'folke/noice.nvim',
+        event = 'VeryLazy',
+        opts = {},
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+        }
+    },
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -164,7 +171,11 @@ require('lazy').setup({
             "nvim-treesitter/nvim-treesitter",
         },
         config = function()
-            require("go").setup()
+            require("go").setup({
+                lsp_inlay_hints = {
+                    enable = true,
+                }
+            })
         end,
         event = {"CmdlineEnter"},
         ft = {"go", 'gomod'},
