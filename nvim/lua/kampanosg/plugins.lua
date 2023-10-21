@@ -2,16 +2,14 @@ require('lazy').setup({
 
     -- theme
     {
-        "folke/tokyonight.nvim",
+        "bluz71/vim-nightfly-guicolors",
         lazy = false,
-        priority = 1000,
-        opts = {},
-        config = function ()
+        priority = 1000, 
+        config = function()
             vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
-            vim.cmd('colorscheme tokyonight-night')
-            vim.cmd('highlight Normal ctermbg=NONE guibg=NONE')
-        end
-    },
+            vim.cmd([[colorscheme nightfly]])
+        end,
+    },    
 
     -- editor
     {
