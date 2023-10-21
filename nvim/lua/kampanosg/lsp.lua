@@ -55,3 +55,25 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
   group = format_sync_grp,
 })
+
+-- rust tools
+local rust_lsp = lsp.build_options("rust_analyzer", {
+    settings = {
+        ["rust-analyzer"] = {
+            checkOnSave = {
+                allFeatures = true,
+                command = "clippy",
+            },
+        },
+    },
+})
+
+-- Initialize rust_analyzer with rust-tools
+require("rust-tools").setup({
+    server = rust_lsp,
+    tools = {
+        inlay_hints = {
+            auto = true,
+        },
+    },
+})

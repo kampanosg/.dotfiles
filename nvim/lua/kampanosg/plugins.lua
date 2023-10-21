@@ -13,6 +13,14 @@ require('lazy').setup({
 
     -- editor
     {
+        'folke/noice.nvim',
+        event = 'VeryLazy',
+        opts = {},
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+        }
+    },
+    {
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
@@ -162,7 +170,11 @@ require('lazy').setup({
             "nvim-treesitter/nvim-treesitter",
         },
         config = function()
-            require("go").setup()
+            require("go").setup({
+                lsp_inlay_hints = {
+                    enable = true,
+                }
+            })
         end,
         event = {"CmdlineEnter"},
         ft = {"go", 'gomod'},
@@ -218,6 +230,7 @@ require('lazy').setup({
             {'hrsh7th/nvim-cmp'},
             {'hrsh7th/cmp-nvim-lsp'},
             {'L3MON4D3/LuaSnip'},
+            {'simrat39/rust-tools.nvim'},
         }
     },
 })
