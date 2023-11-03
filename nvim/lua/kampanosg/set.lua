@@ -35,4 +35,3 @@ vim.opt.shortmess:append("c")
 
 vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
-

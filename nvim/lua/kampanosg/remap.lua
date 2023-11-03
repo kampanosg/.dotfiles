@@ -4,8 +4,6 @@ local opts = { noremap = true, silent = true }
 -- Move a line of code up or down
 map('n', '<leader>mj', '<cmd>m +1<CR>', opts)
 map('n', '<leader>mk', '<cmd>m -2<CR>', opts)
-map('n', '<leader>mj', '<cmd>m +1<CR>', opts)
-map('n', '<leader>mk', '<cmd>m -2<CR>', opts)
 
 map('n', '<leader>dl', '<cmd>:t.<CR>', opts) -- Duplicate line
 
@@ -26,3 +24,6 @@ map('n', '<leader>0', '<Cmd>BufferLast<CR>', opts)
 map('n', '<S-w>', '<Cmd>BufferClose<CR>', opts) -- close buffer
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts) -- move to prev buffer
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts) -- move to next buffer
+
+-- copilot, change accept sequence
+vim.api.nvim_set_keymap('i', '<C-j>', 'copilot#Accept("<CR>")', { expr = true, silent = true})
