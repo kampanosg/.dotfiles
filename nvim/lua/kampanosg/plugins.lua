@@ -7,19 +7,11 @@ require('lazy').setup({
         priority = 1000, 
         config = function()
             vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
-            vim.cmd([[colorscheme nightfly]])
-        end,
-    },    
+            vim.cmd('colorscheme github_dark_dimmed')
+        end
+    },
 
     -- editor
-    {
-        'folke/noice.nvim',
-        event = 'VeryLazy',
-        opts = {},
-        dependencies = {
-            'MunifTanjim/nui.nvim',
-        }
-    },
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -132,6 +124,11 @@ require('lazy').setup({
             }))
         end,
     },
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        config = true,
+    },
 
 
     -- coding
@@ -163,11 +160,11 @@ require('lazy').setup({
         end
     },
     {
-        "ray-x/go.nvim",
-        dependencies = {  -- optional packages
-            "ray-x/guihua.lua",
-            "neovim/nvim-lspconfig",
-            "nvim-treesitter/nvim-treesitter",
+        'ray-x/go.nvim',
+        dependencies = {
+            'ray-x/guihua.lua',
+            'neovim/nvim-lspconfig',
+            'nvim-treesitter/nvim-treesitter',
         },
         config = function()
             require("go").setup({
@@ -176,13 +173,13 @@ require('lazy').setup({
                 }
             })
         end,
-        event = {"CmdlineEnter"},
-        ft = {"go", 'gomod'},
+        event = 'CmdlineEnter',
+        ft = {'go', 'gomod'},
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
     {
         'windwp/nvim-autopairs',
-        event = "InsertEnter",
+        event = 'InsertEnter',
         opts = {}
     },
     {
@@ -232,5 +229,46 @@ require('lazy').setup({
             {'L3MON4D3/LuaSnip'},
             {'simrat39/rust-tools.nvim'},
         }
+    },
+
+    -- testing
+    {
+        'nvim-neotest/neotest',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'antoinemadec/FixCursorHold.nvim',
+
+            'nvim-neotest/neotest-go',
+            'rouge8/neotest-rust',
+            'lawrence-laz/neotest-zig',
+        },
+        keys = {
+            { '<leader>rt', '<cmd>lua require("neotest").run.run()<cr>', desc = 'run the nearest test', },
+            { '<leader>rtf', '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', desc = 'run all the tests in the file', },
+            { '<leader>t|', '<cmd>Neotest summary<cr>', desc = 'opens the neotest summary window', }
+        },
+        config = function()
+            local neotest_ns = vim.api.nvim_create_namespace("neotest")
+            vim.diagnostic.config({
+                virtual_text = {
+                    format = function(diagnostic)
+                        local message =
+                            diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+                        return message
+                    end,
+                },
+            }, neotest_ns)
+            require("neotest").setup({
+                library = {
+                    plugins = { "neotest" },
+                    types = true,
+                },
+                adapters = {
+                    require("neotest-go"),
+                    require("neotest-rust"),
+                    require("neotest-zig"),
+                },
+            })
+        end,
     },
 })
