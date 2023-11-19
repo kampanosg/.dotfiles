@@ -230,6 +230,11 @@ require('lazy').setup({
             {'simrat39/rust-tools.nvim'},
         }
     },
+    {
+        'j-hui/fidget.nvim',
+        tag = 'legacy',
+        event = 'LspAttach',
+    },
 
     -- testing
     {
