@@ -36,14 +36,15 @@ require('lazy').setup({
     },
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
-        dependencies = { 'nvim-lua/plenary.nvim' },
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'BurntSushi/ripgrep',
+        },
         keys = {
             { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'telescope: find a file' },
             { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = 'telescope: find a buffer' },
             { '<leader>f;', '<cmd>Telescope resume<cr>', desc = 'telescope: resume search' },
-            { '<leader>fa', function()
-                require('telescope.builtin').grep_string({ search = vim.fn.input("🔎 ") })
-            end, desc = 'telescope: global search' }
+            { '<leader>fa', '<cmd>Telescope live_grep<cr>', desc = 'telescope: live search' },
         }
     },
     {
