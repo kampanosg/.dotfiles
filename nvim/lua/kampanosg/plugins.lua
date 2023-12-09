@@ -2,12 +2,12 @@ require('lazy').setup({
 
     -- theme
     {
-        "bluz71/vim-nightfly-guicolors",
+        'rebelot/kanagawa.nvim',
         lazy = false,
         priority = 1000, 
         config = function()
             vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
-            vim.cmd('colorscheme github_dark_dimmed')
+            vim.cmd("colorscheme kanagawa")
         end
     },
 
@@ -35,7 +35,7 @@ require('lazy').setup({
         }
     },
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        'nvim-telescope/telescope.nvim', tag = '0.1.5',
         dependencies = {
             'nvim-lua/plenary.nvim',
             'BurntSushi/ripgrep',
@@ -75,28 +75,6 @@ require('lazy').setup({
         end
     },
     {
-        'romgrk/barbar.nvim',
-        dependencies = {
-            'lewis6991/gitsigns.nvim',
-            'nvim-tree/nvim-web-devicons',
-        },
-        init = function() vim.g.barbar_auto_setup = false end,
-        opts = {
-            sidebar_filetypes = {
-                NvimTree = true,
-            },
-            icons = {
-                diagnostics = {
-                    [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'ﬀ'},
-                    [vim.diagnostic.severity.WARN] = {enabled = false},
-                    [vim.diagnostic.severity.INFO] = {enabled = false},
-                    [vim.diagnostic.severity.HINT] = {enabled = true},
-                }
-            },
-        },
-        version = '^1.0.0',
-    },
-    {
         'yamatsum/nvim-cursorline',
         config = function ()
             require('nvim-cursorline').setup {
@@ -130,7 +108,6 @@ require('lazy').setup({
         version = "*",
         config = true,
     },
-
 
     -- coding
     {
@@ -243,7 +220,6 @@ require('lazy').setup({
         dependencies = {
             'nvim-lua/plenary.nvim',
             'antoinemadec/FixCursorHold.nvim',
-
             'nvim-neotest/neotest-go',
             'rouge8/neotest-rust',
             'lawrence-laz/neotest-zig',
