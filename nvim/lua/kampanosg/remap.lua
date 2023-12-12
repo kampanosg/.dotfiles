@@ -13,3 +13,19 @@ vim.api.nvim_set_keymap('i', '<C-j>', 'copilot#Accept("<CR>")', { expr = true, s
 
 -- keep the paste register
 map('x', '<leader>p', '"_dp', opts)
+
+-- remove newbie crutches
+map('n', '<up>', '<nop>', opts)
+map('n', '<down>', '<nop>', opts)
+map('n', '<left>', '<nop>', opts)
+map('n', '<right>', '<nop>', opts)
+
+map('i', '<up>', '<nop>', opts)
+map('i', '<down>', '<nop>', opts)
+map('i', '<left>', '<nop>', opts)
+map('i', '<right>', '<nop>', opts)
+
+map('v', '<up>', '<nop>', opts)
+map('v', '<down>', '<nop>', opts)
+map('v', '<left>', '<nop>', opts)
+map('v', '<right>', '<nop>', opts)
