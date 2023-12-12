@@ -1,7 +1,6 @@
 [user]
 	name = George Kampanos
-	email = ###### MACHINE SPECIFIC ######
-	signingkey = ###### REDACTED ######
+	email = kampanosg@outlook.com
 [credential]
 	helper = osxkeychain
 [filter "lfs"]
