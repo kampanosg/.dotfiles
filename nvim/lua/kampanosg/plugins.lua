@@ -2,12 +2,12 @@ require('lazy').setup({
 
     -- theme
     {
-        'rebelot/kanagawa.nvim',
+        'AlexvZyl/nordic.nvim',
         lazy = false,
-        priority = 1000, 
+        priority = 1000,
         config = function()
             vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
-            vim.cmd("colorscheme kanagawa")
+            require 'nordic' .load()
         end
     },
 
@@ -138,6 +138,9 @@ require('lazy').setup({
         end
     },
     {
+        'nvim-treesitter/nvim-treesitter-context',
+    },
+    {
         'ray-x/go.nvim',
         dependencies = {
             'ray-x/guihua.lua',
@@ -222,7 +225,6 @@ require('lazy').setup({
             'antoinemadec/FixCursorHold.nvim',
             'nvim-neotest/neotest-go',
             'rouge8/neotest-rust',
-            'lawrence-laz/neotest-zig',
         },
         keys = {
             { '<leader>rt', '<cmd>lua require("neotest").run.run()<cr>', desc = 'run the nearest test', },
@@ -248,7 +250,6 @@ require('lazy').setup({
                 adapters = {
                     require("neotest-go"),
                     require("neotest-rust"),
-                    require("neotest-zig"),
                 },
             })
         end,
