@@ -8,6 +8,7 @@ require('lazy').setup({
         config = function()
             vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
             require 'nordic' .load()
+            vim.cmd('hi Visual guifg=#2c3e50 guibg=#e67e22 gui=none')
         end
     },
 
@@ -45,6 +46,8 @@ require('lazy').setup({
             { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = 'telescope: find a buffer' },
             { '<leader>f;', '<cmd>Telescope resume<cr>', desc = 'telescope: resume search' },
             { '<leader>fa', '<cmd>Telescope live_grep<cr>', desc = 'telescope: live search' },
+            { '<leader>fc', '<cmd>Telescope commands<cr>', desc = 'telescope: show all commands' },
+            { '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'telescope: show help' },
         }
     },
     {
@@ -75,39 +78,11 @@ require('lazy').setup({
         end
     },
     {
-        'yamatsum/nvim-cursorline',
-        config = function ()
-            require('nvim-cursorline').setup {
-                cursorline = {
-                    enable = true,
-                    timeout = 0,
-                    number = false,
-                }
-            }
-        end
-    },
-    {
-        'gelguy/wilder.nvim',
-        config = function()
-            local wilder = require('wilder')
-            wilder.setup({modes = {':', '/', '?'}})
-            wilder.set_option('use_python_remote_plugin', 0)
-            wilder.set_option('pipeline', {
-                wilder.branch(
-                    wilder.cmdline_pipeline(),
-                    wilder.search_pipeline()
-                ),
-            })
-            wilder.set_option('renderer', wilder.popupmenu_renderer({
-                highlighter = wilder.basic_highlighter(),
-            }))
-        end,
-    },
-    {
         'akinsho/toggleterm.nvim',
         version = "*",
         config = true,
     },
+
 
     -- coding
     {
@@ -159,11 +134,6 @@ require('lazy').setup({
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
     {
-        'windwp/nvim-autopairs',
-        event = 'InsertEnter',
-        opts = {}
-    },
-    {
         'folke/todo-comments.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {}
@@ -211,11 +181,6 @@ require('lazy').setup({
             {'simrat39/rust-tools.nvim'},
         }
     },
-    {
-        'j-hui/fidget.nvim',
-        tag = 'legacy',
-        event = 'LspAttach',
-    },
 
     -- testing
     {
@@ -223,6 +188,7 @@ require('lazy').setup({
         dependencies = {
             'nvim-lua/plenary.nvim',
             'antoinemadec/FixCursorHold.nvim',
+
             'nvim-neotest/neotest-go',
             'rouge8/neotest-rust',
         },
