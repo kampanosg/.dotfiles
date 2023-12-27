@@ -51,6 +51,12 @@ require('lazy').setup({
             { '<leader>fa', '<cmd>Telescope live_grep<cr>', desc = 'telescope: live search' },
             { '<leader>fc', '<cmd>Telescope commands<cr>', desc = 'telescope: show all commands' },
             { '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'telescope: show help' },
+            { '<leader>gd', '<cmd>Telescope lsp_definitions<cr>', desc = 'show definition' },
+            { '<leader>gr', '<cmd>Telescope lsp_references<cr>', desc = 'show references' },
+            { '<leader>gY', '<cmd>Telescope lsp_type_definitions<cr>', desc = 'show type definitions' },
+            { '<leader>gi', '<cmd>Telescope lsp_implementations<cr>', desc = 'show implementations' },
+            { '<leader>gci', '<cmd>Telescope lsp_incoming_calls<cr>', desc = 'show incoming calls' },
+            { '<leader>gco', '<cmd>Telescope lsp_outgoing_calls<cr>', desc = 'show outgoing calls' },
         }
     },
     {
