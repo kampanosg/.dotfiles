@@ -2,14 +2,17 @@ require('lazy').setup({
 
     -- theme
     {
-        'AlexvZyl/nordic.nvim',
+        'scottmckendry/cyberdream.nvim',
         lazy = false,
         priority = 1000,
         config = function()
-            vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:Cursor/Cursor"
-            require 'nordic' .load()
-            vim.cmd('hi Visual guifg=#2c3e50 guibg=#e67e22 gui=none')
-        end
+            require('cyberdream').setup({
+                transparent = true,
+                italic_comments = true,
+                hide_fillchars = true,
+            })
+            vim.cmd('colorscheme cyberdream')
+        end,
     },
 
     -- editor
