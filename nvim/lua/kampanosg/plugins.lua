@@ -76,7 +76,7 @@ require('lazy').setup({
             { '<leader>tt', '<cmd>TroubleToggle<cr>', desc = 'toggle trouble' },
             { '<leader>tw', '<cmd>TroubleToggle workspace_diagnostics<cr>', desc = 'show workspace diagnostics' },
             { '<leader>td', '<cmd>TroubleToggle document_diagnostics<cr>', desc = 'show document diagnostics' },
-            { '<leader>tq', '<cmd>TroubleToggle quickfix<cr>', desc = 'quickfix with trouble' },
+            { '<leader>ta', '<cmd>TroubleToggle quickfix<cr>', desc = 'quickfix with trouble' },
         }
     },
     {
