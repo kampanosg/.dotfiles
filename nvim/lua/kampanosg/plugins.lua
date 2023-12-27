@@ -98,15 +98,6 @@ require('lazy').setup({
         'tpope/vim-commentary'
     },
     {
-        'dnlhc/glance.nvim',
-        keys = {
-            { '<leader>gd', '<cmd>Glance definitions<cr>', desc = 'show definition' },
-            { '<leader>gr', '<cmd>Glance references<cr>', desc = 'show references' },
-            { '<leader>gY', '<cmd>Glance type_definitions<cr>', desc = 'show type definitions' },
-            { '<leader>gi', '<cmd>Glance implementations<cr>', desc = 'show implementations' },
-        }
-    },
-    {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         config = function()
@@ -141,11 +132,6 @@ require('lazy').setup({
         event = 'CmdlineEnter',
         ft = {'go', 'gomod'},
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
-    },
-    {
-        'folke/todo-comments.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        opts = {}
     },
     {
         'github/copilot.vim'
