@@ -2,17 +2,13 @@ require('lazy').setup({
 
     -- theme
     {
-        'scottmckendry/cyberdream.nvim',
+        'AlexvZyl/nordic.nvim',
         lazy = false,
         priority = 1000,
         config = function()
-            require('cyberdream').setup({
-                transparent = true,
-                italic_comments = true,
-                hide_fillchars = true,
-            })
-            vim.cmd('colorscheme cyberdream')
-        end,
+            require 'nordic' .load()
+            vim.cmd('hi Visual guifg=#2c3e50 guibg=#e67e22 gui=none')
+        end
     },
 
     -- editor
@@ -57,6 +53,8 @@ require('lazy').setup({
             { '<leader>gi', '<cmd>Telescope lsp_implementations<cr>', desc = 'show implementations' },
             { '<leader>gci', '<cmd>Telescope lsp_incoming_calls<cr>', desc = 'show incoming calls' },
             { '<leader>gco', '<cmd>Telescope lsp_outgoing_calls<cr>', desc = 'show outgoing calls' },
+            { '<leader>gs', '<cmd>Telescope lsp_dynamic_wokspace_symbols<cr>', desc = 'show document symbols' },
+            { '<leader>gD', '<cmd>Telescope diagnostics<cr>', desc = 'show diagnostics' },
         }
     },
     {
@@ -67,21 +65,10 @@ require('lazy').setup({
         end
     },
     {
-        'folke/trouble.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require("trouble").setup()
-        end,
-        keys = {
-            { '<leader>tt', '<cmd>TroubleToggle<cr>', desc = 'toggle trouble' },
-            { '<leader>tw', '<cmd>TroubleToggle workspace_diagnostics<cr>', desc = 'show workspace diagnostics' },
-            { '<leader>td', '<cmd>TroubleToggle document_diagnostics<cr>', desc = 'show document diagnostics' },
-            { '<leader>ta', '<cmd>TroubleToggle quickfix<cr>', desc = 'quickfix with trouble' },
-        }
-    },
-    {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        dependencies = {
+            'nvim-tree/nvim-web-devicons'
+        },
         config = function()
             require('lualine').setup()
         end
@@ -100,6 +87,9 @@ require('lazy').setup({
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-context',
+        },
         config = function()
             require'nvim-treesitter.configs'.setup {
                 ensure_installed = { 'go', 'gomod', 'gosum', 'graphql', 'lua', 'rust', 'javascript', 'typescript', 'vim' },
@@ -111,9 +101,6 @@ require('lazy').setup({
                 },
             }
         end
-    },
-    {
-        'nvim-treesitter/nvim-treesitter-context',
     },
     {
         'ray-x/go.nvim',
