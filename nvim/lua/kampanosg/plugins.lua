@@ -30,6 +30,7 @@ require('lazy').setup({
             { '<leader>gi', '<cmd>Telescope lsp_implementations<cr>', desc = 'show implementations' },
             { '<leader>gci', '<cmd>Telescope lsp_incoming_calls<cr>', desc = 'show incoming calls' },
             { '<leader>gco', '<cmd>Telescope lsp_outgoing_calls<cr>', desc = 'show outgoing calls' },
+            { '<leader>gst', '<cmd>Telescope git_status<cr>', desc = 'show the git status' },
         }
     },
     {
