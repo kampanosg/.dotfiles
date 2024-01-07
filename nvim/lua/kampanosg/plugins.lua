@@ -59,6 +59,14 @@ require('lazy').setup({
         'tpope/vim-commentary'
     },
     {
+        'kylechui/nvim-surround',
+        version = '*',
+        event = 'VeryLazy',
+        config = function()
+            require('nvim-surround').setup()
+        end
+    },
+    {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         dependencies = {
