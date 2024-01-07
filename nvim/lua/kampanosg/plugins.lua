@@ -49,7 +49,7 @@ require('lazy').setup({
     },
     {
         'akinsho/toggleterm.nvim',
-        version = "*",
+        version = '*',
         config = true,
     },
 
@@ -92,7 +92,7 @@ require('lazy').setup({
             'nvim-treesitter/nvim-treesitter',
         },
         config = function()
-            require("go").setup({
+            require('go').setup({
                 lsp_inlay_hints = {
                     enable = true,
                 }
@@ -117,7 +117,7 @@ require('lazy').setup({
         },
         config = function()
             vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-            vim.o.foldcolumn = "1"
+            vim.o.foldcolumn = '1'
             vim.o.foldlevel = 99
             vim.o.foldlevelstart = 99
             vim.o.foldenable = true
@@ -162,24 +162,24 @@ require('lazy').setup({
             { '<leader>t|', '<cmd>Neotest summary<cr>', desc = 'opens the neotest summary window', }
         },
         config = function()
-            local neotest_ns = vim.api.nvim_create_namespace("neotest")
+            local neotest_ns = vim.api.nvim_create_namespace('neotest')
             vim.diagnostic.config({
                 virtual_text = {
                     format = function(diagnostic)
                         local message =
-                            diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+                            diagnostic.message:gsub('\n', ' '):gsub('\t', ' '):gsub('%s+', ' '):gsub('^%s+', '')
                         return message
                     end,
                 },
             }, neotest_ns)
-            require("neotest").setup({
+            require('neotest').setup({
                 library = {
-                    plugins = { "neotest" },
+                    plugins = { 'neotest' },
                     types = true,
                 },
                 adapters = {
-                    require("neotest-go"),
-                    require("neotest-rust"),
+                    require('neotest-go'),
+                    require('neotest-rust'),
                 },
             })
         end,
