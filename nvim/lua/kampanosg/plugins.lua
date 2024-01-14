@@ -13,28 +13,6 @@ require('lazy').setup({
 
     -- editor
     {
-        'nvim-tree/nvim-tree.lua',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require('nvim-tree').setup({
-                filters = {
-                    dotfiles = false
-                },
-                git = {
-                    enable = true,
-                    ignore = false,
-                    show_on_dirs = true,
-                    timeout = 400,
-                }
-            })
-        end,
-        keys = {
-            { '<leader>t1', '<cmd>NvimTreeToggle<cr>', desc = 'toggle nvim tree' },
-            { '<leader>tf', '<cmd>NvimTreeFocus<cr>', desc = 'focus on the nvim tree' },
-            { '<leader>tl', '<cmd>NvimTreeFindFile<cr>', desc = 'go to current file in nvim tree' }
-        }
-    },
-    {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
         dependencies = {
             'nvim-lua/plenary.nvim',
@@ -126,12 +104,12 @@ require('lazy').setup({
     {
         'kevinhwang91/nvim-ufo',
         event = "BufRead",
+        dependencies = {
+            'kevinhwang91/promise-async',
+        },
         keys = {
             { '<leader>zf', '<cmd>foldclose<cr>', desc = 'closes a fold', },
             { '<leader>zo', '<cmd>foldopen<cr>', desc = 'closes a fold', },
-        },
-        dependencies = {
-            { 'kevinhwang91/promise-async' },
         },
         config = function()
             vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
