@@ -2,7 +2,8 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- netrw
-map('n', '<leader>t1', '<cmd>Ex<cr>', opts)
+map('n', '<leader>e', '<cmd>Ex<cr>', opts)
+map('n', '<C-W>', '<cmd>bd<cr>', opts)
 
 -- move a line of code up or down
 map('n', '<leader>mj', '<cmd>m +1<cr>', opts)

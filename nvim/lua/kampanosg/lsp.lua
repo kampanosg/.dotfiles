@@ -30,14 +30,10 @@ lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     -- some are overwritten by Glance
-    -- vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-    -- vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>gR", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "<leader>ga", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-    -- vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "<F3>", function() vim.diagnostic.goto_prev() end, opts)
     vim.keymap.set("n", "<F4>", function() vim.lsp.buf.code_action() end, opts)
@@ -56,24 +52,24 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = format_sync_grp,
 })
 
--- rust tools
-local rust_lsp = lsp.build_options("rust_analyzer", {
-    settings = {
-        ["rust-analyzer"] = {
-            checkOnSave = {
-                allFeatures = true,
-                command = "clippy",
-            },
-        },
-    },
-})
+-- -- rust tools
+-- local rust_lsp = lsp.build_options("rust_analyzer", {
+--     settings = {
+--         ["rust-analyzer"] = {
+--             checkOnSave = {
+--                 allFeatures = true,
+--                 command = "clippy",
+--             },
+--         },
+--     },
+-- })
 
--- Initialize rust_analyzer with rust-tools
-require("rust-tools").setup({
-    server = rust_lsp,
-    tools = {
-        inlay_hints = {
-            auto = true,
-        },
-    },
-})
+-- -- Initialize rust_analyzer with rust-tools
+-- require("rust-tools").setup({
+--     server = rust_lsp,
+--     tools = {
+--         inlay_hints = {
+--             auto = true,
+--         },
+--     },
+-- })
