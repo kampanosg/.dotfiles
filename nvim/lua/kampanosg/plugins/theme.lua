@@ -1,9 +1,13 @@
 return {
-    'AlexvZyl/nordic.nvim',
-    lazy = false,
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
     config = function()
-        require 'nordic' .load()
-        vim.cmd('hi Visual guifg=#2c3e50 guibg=#e67e22 gui=none')
+        require('catppuccin').setup({
+            flavour = 'mocha',
+            transparent_background = true,
+            show_end_of_buffer = true,
+        })
+        vim.cmd.colorscheme 'catppuccin'
     end
 }
