@@ -6,7 +6,24 @@ return {
         require('catppuccin').setup({
             flavour = 'mocha',
             transparent_background = true,
-            show_end_of_buffer = true,
+            integrations = {
+                fidget = true,
+                gitsigns = true,
+                mason = true,
+                neotest = true,
+                cmp = true,
+                ufo = true,
+                telescope = {
+                    enabled = true,
+                },
+                indent_blankline = {
+                    enabled = true,
+                    scope_color = 'peach',
+                    colored_indent_levels = false,
+                },
+                treesitter_context = true,
+                lsp_trouble = true,
+            },
         })
         vim.cmd.colorscheme 'catppuccin'
     end
