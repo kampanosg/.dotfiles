@@ -22,6 +22,5 @@ return {
         { '<leader>gci', '<cmd>lua require("telescope.builtin").lsp_incoming_calls({layout_strategy="vertical"})<cr>', desc = 'show incoming calls' },
         { '<leader>gco', '<cmd>lua require("telescope.builtin").lsp_outgoing_calls({layout_strategy="vertical"})<cr>', desc = 'show outgoing calls' },
         { '<leader>gs', '<cmd>lua require("telescope.builtin").lsp_dynamic_wokspace_symbols({layout_strategy="vertical"})<cr>', desc = 'show document symbols' },
-        { '<leader>gD', '<cmd>lua require("telescope.builtin").diagnostics({layout_strategy="vertical"})<cr>', desc = 'show diagnostics' },
     }
 }
