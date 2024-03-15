@@ -23,6 +23,10 @@ return {
                 },
                 treesitter_context = true,
                 lsp_trouble = true,
+                illuminate = {
+                    enabled = true,
+                    lsp = false
+                },
             },
         })
         vim.cmd.colorscheme 'catppuccin'
