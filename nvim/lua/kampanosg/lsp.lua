@@ -29,7 +29,6 @@ lsp.setup_nvim_cmp({
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
-    -- some are overwritten by Glance
     vim.keymap.set("n", "<leader>gR", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "<leader>ga", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -42,7 +41,7 @@ end)
 lsp.setup()
 
 
--- format go on save
+-- format Go on save
 local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
@@ -52,24 +51,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = format_sync_grp,
 })
 
--- -- rust tools
--- local rust_lsp = lsp.build_options("rust_analyzer", {
---     settings = {
---         ["rust-analyzer"] = {
---             checkOnSave = {
---                 allFeatures = true,
---                 command = "clippy",
---             },
---         },
---     },
--- })
-
--- -- Initialize rust_analyzer with rust-tools
--- require("rust-tools").setup({
---     server = rust_lsp,
---     tools = {
---         inlay_hints = {
---             auto = true,
---         },
---     },
--- })
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
+  command = 'silent! EslintFixAll',
+  group = vim.api.nvim_create_augroup('MyAutocmdsJavaScripFormatting', {}),
+})
