@@ -37,3 +37,11 @@ vim.opt.shortmess:append("c")
 
 vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
+
+vim.opt.list = true
+vim.opt.listchars = {
+    tab = '│·',
+    extends = '⟩',
+    precedes = '⟨',
+    trail = '·'
+}
