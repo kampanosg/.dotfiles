@@ -31,6 +31,16 @@ source $ZSH/oh-my-zsh.sh
 ### User configuration ###
 ##########################
 
+# Functions
+fnr() {
+    if [ $# -ne 3 ]; then
+        echo "Usage: fnr <directory> <old_string> <new_string>"
+        return 1
+    fi
+
+    grep -rl "$2" "$1" | xargs sed -i '' "s/$2/$3/g"
+}
+
 # Aliases
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
