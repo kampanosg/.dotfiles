@@ -4,9 +4,11 @@ return {
     priority = 1000,
     config = function()
         require('catppuccin').setup({
-            flavour = 'mocha',
+            flavour = 'macchiato',
             transparent_background = true,
             integrations = {
+                dap = true,
+                dap_ui = true,
                 fidget = true,
                 gitsigns = true,
                 mason = true,
@@ -30,5 +32,10 @@ return {
             },
         })
         vim.cmd.colorscheme 'catppuccin'
+
+        local sign = vim.fn.sign_define
+        sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
+        sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
+        sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
     end
 }

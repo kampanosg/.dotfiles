@@ -35,7 +35,6 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "<F3>", function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set("n", "<F4>", function() vim.lsp.buf.code_action() end, opts)
 end)
 
 lsp.setup()

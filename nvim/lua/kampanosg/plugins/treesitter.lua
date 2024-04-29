@@ -6,7 +6,17 @@ return {
     },
     config = function()
         require'nvim-treesitter.configs'.setup {
-            ensure_installed = { 'go', 'gomod', 'gosum', 'graphql', 'lua', 'rust', 'javascript', 'typescript', 'vim' },
+            ensure_installed = {
+                'go',
+                'gomod',
+                'gosum',
+                'graphql',
+                'lua',
+                'rust',
+                'javascript',
+                'typescript',
+                'vim'
+            },
             auto_install = true,
             sync_install = false,
             highlight = {

@@ -1,5 +1,5 @@
 return {
-    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    'nvim-telescope/telescope.nvim', tag = '0.1.6',
     dependencies = {
         'nvim-lua/plenary.nvim',
         'BurntSushi/ripgrep',
@@ -9,7 +9,7 @@ return {
         require('telescope').load_extension('live_grep_args')
     end,
     keys = {
-        { '<leader>ff', '<cmd>lua require("telescope.builtin").find_files({layout_strategy="vertical",path_display = { "truncate" }})<cr>', desc = 'find a file' },
+        { '<leader>ff', '<cmd>lua require("telescope.builtin").find_files({layout_strategy="vertical", path_display = { "truncate" }})<cr>', desc = 'find a file' },
         { '<leader>fb', '<cmd>lua require("telescope.builtin").buffers({layout_strategy="vertical"})<cr>', desc = 'find a buffer' },
         { '<leader>f;', '<cmd>Telescope resume<cr>', desc = 'resume search' },
         { '<leader>fa', '<cmd>lua require("telescope").extensions.live_grep_args.live_grep_args({layout_strategy="vertical"})<cr>', desc = 'livegrep with args' },
