@@ -30,7 +30,6 @@ lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "<leader>gR", function() vim.lsp.buf.rename() end, opts)
-    vim.keymap.set("n", "<leader>ga", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, opts)
