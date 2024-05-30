@@ -1,19 +1,12 @@
 # NeoVim Configuration
-This is my NeoVim configuration! I primarily use it for daily Go and Rust development.
+This is my NeoVim configuration! I primarily use it for daily Go and Rust development and storing it to roll back to it when I break it 😅. 
 
-Mainly storing it here so that I don't lose it and be able to roll-back whenever I break it 😅.
-
-It can be cloned directly into `~/.config/` and then renamed to `nvim`. [Packer](https://github.com/wbthomason/packer.nvim), is also required for plugin management. 
+I aim to use as few plugins as possible and use a lot of default vim functionality. For example, I don't have buffer lines, sidebars etc. It can be cloned directly into `~/.config/` and Lazy should do the rest 
 
 ## Dependencies
 
-Run `:PackerSync` to pull the plugins.
-The following `Mason` packages are also required (Install with `:MasonInstall`
-* `gopls`
-* `rust-analyzer`
-* `lua-language-server`
-* `codelldb`
-* `cpptools`
+* `fzf`
+* Language Servers
 
 <p align="center">
   <img src="https://media.giphy.com/media/1BXa2alBjrCXC/giphy.gif" alt="animated" />
