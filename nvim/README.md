@@ -6,7 +6,18 @@ I aim to use as few plugins as possible and use a lot of default vim functionali
 ## Dependencies
 
 * `fzf`
-* Language Servers
+* Language Servers (managed by brew)
+
+### Language Servers
+
+* [`bash-language-server`](https://formulae.brew.sh/formula/bash-language-server#default)
+* [`dockerfile-language-server`](https://formulae.brew.sh/formula/dockerfile-language-server#default)
+* [`gopls`](https://formulae.brew.sh/formula/gopls#default)
+* [`lua-language-server`](https://formulae.brew.sh/formula/lua-language-server#default)
+* [`rust-analyzer`](https://formulae.brew.sh/formula/rust-analyzer#default)
+* [`terraform-lsp`](https://formulae.brew.sh/formula/terraform-lsp#default)
+* [`typescript-language-server`](https://formulae.brew.sh/formula/typescript-language-server#default)
+* [`yaml-language-server`](https://formulae.brew.sh/formula/yaml-language-server#default)
 
 <p align="center">
   <img src="https://media.giphy.com/media/1BXa2alBjrCXC/giphy.gif" alt="animated" />

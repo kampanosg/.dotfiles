@@ -1,17 +1,26 @@
 return {
     'ibhagwan/fzf-lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-        require("fzf-lua").setup({
+        require('fzf-lua').setup({
             winopts = {
                 preview = {
                     layout = 'vertical',
                     vertical = 'down:70%',
+                    wrap = 'wrap',
                 },
             },
             files = {
                 formatter = "path.filename_first",
             },
+            lsp = {
+                multiline = 1,
+            },
+            diagnostics = {
+                multiline = true,
+            },
+            grep = {
+                multiline = 1,
+            }
         })
     end,
     keys = {

@@ -1,21 +1,11 @@
 return {
-    'catppuccin/nvim',
-    name = 'catppuccin',
+    'rebelot/kanagawa.nvim',
     priority = 1000,
     config = function()
-        require('catppuccin').setup({
-            flavour = 'mocha',
-            transparent_background = true,
-            integrations = {
-                fidget = true,
-                gitsigns = true,
-                mason = true,
-                neotest = true,
-                cmp = true,
-                ufo = true,
-                treesitter_context = true,
-            },
+        require('kanagawa').setup({
+            theme = 'dark',
+            terminal_colors = true,
         })
-        vim.cmd.colorscheme 'catppuccin'
+        vim.cmd.colorscheme 'kanagawa'
     end
 }
