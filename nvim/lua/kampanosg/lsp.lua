@@ -41,14 +41,6 @@ lsp.tsserver.setup {
     },
 }
 
--- format on save
-vim.api.nvim_create_autocmd('BufWritePre', {
-    buffer = buffer,
-    callback = function()
-        vim.lsp.buf.format { async = false }
-    end
-})
-
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('gk-lsp-attach', { clear = true }),
     callback = function(event)
@@ -77,5 +69,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<F2>', function() vim.diagnostic.goto_next() end, opts)
         vim.keymap.set('n', '<F3>', function() vim.diagnostic.goto_prev() end, opts)
         vim.keymap.set('n', '<F4>', function() vim.diagnostic.open_float() end, opts)
+        vim.keymap.set('n', '<leader>g==', function() vim.lsp.buf.format { async = false } end, opts)
     end
 })
