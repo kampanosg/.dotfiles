@@ -1,10 +1,6 @@
 return {
     'kevinhwang91/nvim-ufo',
     event = 'BufRead',
-    keys = {
-        { '<leader>zf', '<cmd>foldclose<cr>', desc = 'closes a fold', },
-        { '<leader>zo', '<cmd>foldopen<cr>', desc = 'closes a fold', },
-    },
     dependencies = {
         { 'kevinhwang91/promise-async' },
     },
@@ -17,4 +13,8 @@ return {
 
         require('ufo').setup()
     end,
+    keys = {
+        { '<leader>zf', '<cmd>foldclose<cr>', },
+        { '<leader>zo', '<cmd>foldopen<cr>', },
+    },
 }

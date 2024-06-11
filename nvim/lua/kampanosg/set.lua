@@ -44,3 +44,5 @@ vim.opt.listchars = {
     precedes = '⟨',
     trail = '·'
 }
+
+vim.opt.cursorline = true

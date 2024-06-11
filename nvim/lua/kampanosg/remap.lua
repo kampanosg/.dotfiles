@@ -11,9 +11,6 @@ map('n', '<leader>mk', '<cmd>m -2<cr>', opts)
 -- duplicate line
 map('n', '<leader>dl', '<cmd>:t.<cr>', opts)
 
--- copilot, change accept sequence
-vim.api.nvim_set_keymap('i', '<C-j>', 'copilot#Accept("<cr>")', { expr = true, silent = true})
-
 -- keep the paste register
 map('x', '<leader>p', '"_dp', opts)
 
