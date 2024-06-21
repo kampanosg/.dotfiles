@@ -1,0 +1,11 @@
+[window]
+padding = { x = 10, y = 10 }
+decorations = "Buttonless"
+opacity = 0.85
+blur = true
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font"  }
+bold = { family = "JetBrainsMono Nerd Font"  }
+italic = { family = "JetBrainsMono Nerd Font"  }
+size = 19.25
