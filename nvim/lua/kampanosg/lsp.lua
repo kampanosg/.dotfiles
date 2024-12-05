@@ -2,13 +2,8 @@ local lsp = require('lspconfig')
 
 local language_servers = {
     'gopls',
-    'rust_analyzer',
     'lua_ls',
-    'bashls',
-    'dockerls',
     'tsserver',
-    'yamlls',
-    'terraform_lsp',
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -24,22 +19,22 @@ for _, ls in ipairs(language_servers) do
     })
 end
 
-lsp.tsserver.setup {
-    init_options = {
-        plugins = {
-            {
-                name = '@vue/typescript-plugin',
-                location = '/usr/local/lib/node_modules/@vue/typescript-plugin',
-                languages = { 'javascript', 'typescript', 'vue' },
-            },
-        },
-    },
-    filetypes = {
-        'javascript',
-        'typescript',
-        'vue',
-    },
-}
+-- lsp.tsserver.setup {
+--     init_options = {
+--         plugins = {
+--             {
+--                 name = '@vue/typescript-plugin',
+--                 location = '/usr/local/lib/node_modules/@vue/typescript-plugin',
+--                 languages = { 'javascript', 'typescript', 'vue' },
+--             },
+--         },
+--     },
+--     filetypes = {
+--         'javascript',
+--         'typescript',
+--         'vue',
+--     },
+-- }
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('gk-lsp-attach', { clear = true }),

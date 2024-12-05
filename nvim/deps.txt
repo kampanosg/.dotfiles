@@ -1,9 +1,8 @@
 fzf
-bash-language-server
-dockerfile-language-server
 gopls
 lua-language-server
-rust-analyzer
 terraform-lsp
 typescript-language-server
-yaml-language-server
+bat
+fd
+ripgrep
