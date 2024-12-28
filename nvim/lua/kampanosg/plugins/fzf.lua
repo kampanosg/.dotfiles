@@ -28,6 +28,8 @@ return {
         { '<leader>fb', '<cmd>FzfLua buffers<cr>' },
         { '<leader>f;', '<cmd>FzfLua resume<cr>' },
         { '<leader>fa', '<cmd>FzfLua live_grep<cr>' },
+        { '<leader>fg', '<cmd>FzfLua git_status<cr>' },
+        { '<leader>fG', '<cmd>FzfLua git_bcommits<cr>' },
         { '<leader>gd', '<cmd>FzfLua lsp_definitions<cr>' },
         { '<leader>gr', '<cmd>FzfLua lsp_references<cr>' },
         { '<leader>gi', '<cmd>FzfLua lsp_implementations<cr>' },
