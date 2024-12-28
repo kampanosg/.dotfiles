@@ -3,7 +3,7 @@ local lsp = require('lspconfig')
 local language_servers = {
     'gopls',
     'lua_ls',
-    'tsserver',
+    'ts_ls',
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -14,27 +14,9 @@ capabilities.textDocument.foldingRange = {
 
 for _, ls in ipairs(language_servers) do
     lsp[ls].setup({
-        on_attach = on_attach,
         capabilities = capabilities
     })
 end
-
--- lsp.tsserver.setup {
---     init_options = {
---         plugins = {
---             {
---                 name = '@vue/typescript-plugin',
---                 location = '/usr/local/lib/node_modules/@vue/typescript-plugin',
---                 languages = { 'javascript', 'typescript', 'vue' },
---             },
---         },
---     },
---     filetypes = {
---         'javascript',
---         'typescript',
---         'vue',
---     },
--- }
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('gk-lsp-attach', { clear = true }),
