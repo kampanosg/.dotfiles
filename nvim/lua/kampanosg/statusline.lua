@@ -12,13 +12,13 @@ local modes = {
     ["R"] = "REPLACE ¯\\_(ツ)_/¯",
     ["Rv"] = "VISUAL REPLACE ¯\\_(ツ)_/¯",
     ["c"] = "COMMAND ヾ(⌐■_■)ノ♪",
-    ["cv"] = "VIM EX <(•ᴗ•)>",
-    ["ce"] = "EX <(•ᴗ•)>",
-    ["r"] = "PROMPT (>*-*)>",
-    ["rm"] = "MOAR (>*-*)>",
+    ["cv"] = "VIM EX ლ(╹◡╹ლ)",
+    ["ce"] = "EX ლ(╹◡╹ლ)",
+    ["r"] = "PROMPT ლ(ಠ益ಠლ)",
+    ["rm"] = "MOAR ʕ •ᴥ•ʔ",
     ["r?"] = "CONFIRM ¯\\(º_o)/¯",
-    ["!"] = "SHELL <(•ᴗ•)>",
-    ["t"] = "TERMINAL <(•ᴗ•)>",
+    ["!"] = "SHELL (• ε •)",
+    ["t"] = "TERMINAL (╥﹏╥)",
 }
 
 local function mode()
