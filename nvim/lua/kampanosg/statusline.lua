@@ -107,6 +107,10 @@ local function lineinfo()
   return " %P %l:%c "
 end
 
+local function unsaved()
+    return "%m%r"
+end
+
 Statusline = {}
 
 Statusline.active = function()
@@ -117,6 +121,7 @@ Statusline.active = function()
     "%#Normal# ",
     filepath(),
     filename(),
+    unsaved(),
     "%#Normal#",
     lsp(),
     "%=%#StatusLineExtra#",
