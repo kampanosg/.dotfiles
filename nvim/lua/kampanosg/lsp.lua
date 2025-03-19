@@ -7,10 +7,15 @@ local language_servers = {
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+-- folding
 capabilities.textDocument.foldingRange = {
     dynamicRegistration = false,
     lineFoldingOnly = true
 }
+
+-- completion
+capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
 
 for _, ls in ipairs(language_servers) do
     lsp[ls].setup({
