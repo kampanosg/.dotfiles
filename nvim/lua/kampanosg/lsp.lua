@@ -1,30 +1,5 @@
-local lsp = require('lspconfig')
-
-local language_servers = {
-    'gopls',
-    'lua_ls',
-    'ts_ls',
-}
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
--- folding
-capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true
-}
-
--- completion
-capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
-
-for _, ls in ipairs(language_servers) do
-    lsp[ls].setup({
-        capabilities = capabilities
-    })
-end
-
 vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('gk-lsp-attach', { clear = true }),
+    group = vim.api.nvim_create_augroup('UserLspAttach', { clear = true }),
     callback = function(event)
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client == nil then
@@ -65,3 +40,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end
     end
 })
+
+vim.lsp.enable('gopls')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('ts_ls')
