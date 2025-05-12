@@ -1,8 +1,12 @@
 fzf
+bat
+fd
+ripgrep
 gopls
 lua-language-server
 terraform-lsp
 typescript-language-server
-bat
-fd
-ripgrep
+pyright
+cmake-language-server
+dockerfile-language-server
+bash-language-server
