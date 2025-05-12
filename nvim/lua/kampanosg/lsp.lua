@@ -1,3 +1,11 @@
+vim.lsp.enable('gopls')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('pyright')
+vim.lsp.enable('bashls')
+vim.lsp.enable('dockerls')
+vim.lsp.enable('yamlls')
+
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspAttach', { clear = true }),
     callback = function(event)
@@ -40,7 +48,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end
     end
 })
-
-vim.lsp.enable('gopls')
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('ts_ls')
