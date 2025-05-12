@@ -5,7 +5,7 @@ return {
     },
     event = { 'BufRead', 'BufNewFile' },
     keys = {
-        { 'h]', function() require('gitsigns').nav_hunk('next') end },
-        { 'h[', function() require('gitsigns').nav_hunk('prev') end },
+        { 'g]', function() require('gitsigns').nav_hunk('next') end },
+        { 'g[', function() require('gitsigns').nav_hunk('prev') end },
     },
 }
