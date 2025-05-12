@@ -29,3 +29,10 @@ map('v', '<up>', '<nop>', opts)
 map('v', '<down>', '<nop>', opts)
 map('v', '<left>', '<nop>', opts)
 map('v', '<right>', '<nop>', opts)
+
+--commenting
+vim.keymap.set('n', '--', 'gcc', { remap = true, desc = 'comment single line' })
+vim.keymap.set('v', '--', 'gc', { remap = true, desc = 'comment selection' })
+vim.keymap.set({'n', 'x'}, '==', function()
+  return require('vim._comment').operator()
+end, { expr = true, desc = 'comment operator' })
