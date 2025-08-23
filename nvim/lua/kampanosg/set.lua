@@ -46,3 +46,5 @@ vim.opt.listchars = {
 }
 
 vim.opt.cursorline = true
+
+vim.opt.cmdheight = 0

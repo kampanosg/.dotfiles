@@ -50,7 +50,7 @@ local function git_branch()
     if vim.v.shell_error ~= 0 or branch == "" then
         return ""
     end
-    return string.format("🌿 %s", branch)
+    return string.format(" %s", branch)
 end
 
 local function filepath()
@@ -59,7 +59,7 @@ local function filepath()
         return " "
     end
 
-    return string.format("  📂 %%<%s/", fpath)
+    return string.format("   %%<%s/", fpath)
 end
 
 local function filename()
@@ -89,19 +89,19 @@ local function lsp()
     local info = ""
 
     if count["errors"] ~= 0 then
-        errors = " %#LspDiagnosticsSignError#❌ " .. count["errors"]
+        errors = " %#StatusLineLspError#● " .. count["errors"]
     end
     if count["warnings"] ~= 0 then
-        warnings = " %#LspDiagnosticsSignWarning#⚠️ " .. count["warnings"]
+        warnings = " %#StatusLineLspWarning#⚠ " .. count["warnings"]
     end
     if count["hints"] ~= 0 then
-        hints = " %#LspDiagnosticsSignHint#🤔 " .. count["hints"]
+        hints = " %#StatusLineLspHint#🔍 " .. count["hints"]
     end
     if count["info"] ~= 0 then
-        info = " %#LspDiagnosticsSignInformation#ℹ️ " .. count["info"]
+        info = " %#StatusLineLspInfo#ℹ " .. count["info"]
     end
 
-    return errors .. warnings .. hints .. info .. "%#Normal#"
+    return errors .. warnings .. hints .. info .. "%#StatusLine#"
 end
 
 local function filetype()
@@ -126,12 +126,12 @@ Statusline.active = function()
     "%#Statusline#",
     update_mode_colors(),
     mode(),
-    "%#Normal# ",
+    "%#StatusLine# ",
     git_branch(),
     filepath(),
     filename(),
     unsaved(),
-    "%#Normal#",
+    "%#StatusLine#",
     lsp(),
     "%=%#StatusLineExtra#",
     filetype(),
