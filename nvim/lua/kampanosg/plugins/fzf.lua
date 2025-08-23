@@ -22,6 +22,7 @@ return {
                 multiline = 1,
             }
         })
+        require('fzf-lua').register_ui_select()
     end,
     keys = {
         { '<leader>ff', '<cmd>FzfLua files<cr>' },
