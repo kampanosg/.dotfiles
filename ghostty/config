@@ -1,13 +1,13 @@
-font-family                    = Maple Mono
-font-family-bold               = Maple Mono Bold
-font-family-italic             = Maple Mono Italic
-font-family-bold-italic        = Maple Mono Bold Italic
+font-family                    = JetBrainsMono Nerd Font Mono
+font-family-bold               = JetBrainsMono NFM Bold
+font-family-italic             = JetBrainsMono NFM Italic
+font-family-bold-italic        = JetBrainsMono NFM Bold Italic
 
 font-feature                   = calt
 font-feature                   = liga
 font-feature                   = ss13
 
-font-size                      = 15.5
+font-size                      = 17
 window-inherit-font-size       = true
 
 # Look and Feel
@@ -21,6 +21,8 @@ window-vsync                   = true
 background-opacity             = 1
 background-blur                = true
 background-blur-radius         = 30
+window-padding-x = 0, 0
+window-padding-y = 0, 0
 
 # Other
 clipboard-paste-protection     = true
