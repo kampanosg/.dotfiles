@@ -16,7 +16,6 @@ adjust-underline-position      = 3
 bold-is-bright                 = true
 link-url                       = true
 mouse-hide-while-typing        = true
-theme                          = AdventureTime
 window-vsync                   = true
 background-opacity             = 1
 background-blur                = true
