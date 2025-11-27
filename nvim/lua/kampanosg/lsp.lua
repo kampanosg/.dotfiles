@@ -4,6 +4,7 @@ vim.lsp.enable('ts_ls')
 vim.lsp.enable('pyright')
 vim.lsp.enable('bashls')
 vim.lsp.enable('dockerls')
+vim.lsp.enable('jdtls')
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspAttach', { clear = true }),
