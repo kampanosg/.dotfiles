@@ -59,3 +59,6 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ## Atuin
 eval "$(atuin init zsh)"
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+
+## Java
+export JAVA_HOME=$(/usr/libexec/java_home)
