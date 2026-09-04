@@ -1,28 +1,28 @@
 return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    lazy = false,
+    branch = 'main',
     dependencies = {
         'nvim-treesitter/nvim-treesitter-context',
     },
     config = function()
-        require'nvim-treesitter.configs'.setup {
-            ensure_installed = {
-                'go',
-                'gomod',
-                'gosum',
-                'graphql',
-                'lua',
-                'rust',
-                'javascript',
-                'typescript',
-                'vim'
-            },
-            auto_install = true,
-            sync_install = false,
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
+        local parsers = {
+            'go', 'typescript', 'make', 'bash', 'yaml', 'json', 'lua',
+            'tsx', 'css', 'dockerfile', 'html', 'markdown', 'markdown_inline',
         }
+        local filetypes = {
+            'go', 'typescript', 'make', 'sh', 'yaml', 'json', 'lua',
+            'typescriptreact', 'css', 'dockerfile', 'html', 'markdown',
+        }
+
+        require('nvim-treesitter').install(parsers)
+
+        vim.api.nvim_create_autocmd('FileType', {
+            pattern = filetypes,
+            callback = function()
+                vim.treesitter.start()
+            end,
+        })
     end
 }
